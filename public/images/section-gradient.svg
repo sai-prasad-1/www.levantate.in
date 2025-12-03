@@ -1,0 +1,24 @@
+<svg width="1315" height="543" viewBox="0 0 1315 543" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g filter="url(#filter0_f_22_2265)">
+<path d="M148.772 447.856C89.7812 449.543 90.8699 409.434 98.7882 389.168C428.881 147.39 303.003 216.43 431.381 139.857C577.341 52.7949 803.999 114.566 956.476 139.857C1164.1 216.43 1253.87 436.259 1208.34 441.53C1162.81 446.801 926.545 367.362 891.592 351.663C841.539 329.183 668.67 264.552 419.331 351.663C399.196 358.698 222.511 445.747 148.772 447.856Z" fill="url(#paint0_linear_22_2265)" fill-opacity="0.4"/>
+<path d="M148.772 447.856C89.7812 449.543 90.8699 409.434 98.7882 389.168C428.881 147.39 303.003 216.43 431.381 139.857C577.341 52.7949 803.999 114.566 956.476 139.857C1164.1 216.43 1253.87 436.259 1208.34 441.53C1162.81 446.801 926.545 367.362 891.592 351.663C841.539 329.183 668.67 264.552 419.331 351.663C399.196 358.698 222.511 445.747 148.772 447.856Z" stroke="url(#paint1_radial_22_2265)" stroke-opacity="0.3" stroke-width="132"/>
+</g>
+<defs>
+<filter id="filter0_f_22_2265" x="0.000146866" y="-9.72748e-05" width="1314.81" height="542.801" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="14.45" result="effect1_foregroundBlur_22_2265"/>
+</filter>
+<linearGradient id="paint0_linear_22_2265" x1="229.314" y1="345.692" x2="1295.39" y2="379.139" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D9D9FE"/>
+<stop offset="0.399371" stop-color="#E0FEF8"/>
+<stop offset="1" stop-color="#D9D9FE"/>
+</linearGradient>
+<radialGradient id="paint1_radial_22_2265" cx="0" cy="0" r="1" gradientTransform="matrix(772.286 -14.761 50.2234 1584.78 418.032 368.664)" gradientUnits="userSpaceOnUse">
+<stop stop-color="#D5D5FF"/>
+<stop offset="0.5" stop-color="#DEE5FB"/>
+<stop offset="0.75" stop-color="#D2DAFF"/>
+<stop offset="0.875" stop-color="#C9C9FF" stop-opacity="0.45"/>
+</radialGradient>
+</defs>
+</svg>

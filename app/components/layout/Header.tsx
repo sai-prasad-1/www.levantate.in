@@ -15,61 +15,60 @@ export default function Header() {
       transition={{ duration: 0.6 }}
       className="fixed top-8 left-0 right-0 z-50"
     >
-      <div className="">
-        <nav className="w-full rounded-full shadow-[0_22px_45px_rgba(15,23,42,0.18)] border border-[#E2E4F5] bg-white backdrop-blur-md min-h-16 flex justify-center items-center">
-          <div className="flex items-center justify-between h-full gap-3 px-11">
+      <div className="w-full flex justify-center">
+        <nav className="sm:w-fit rounded-3xl shadow-[0_22px_45px_rgba(15,23,42,0.18)] border border-[#E2E4F5] bg-white backdrop-blur-md min-h-18 flex justify-center items-center">
+          <div className="w-full flex items-center justify-between h-full">
           {/* Logo */}
-            <Link href="/" className="shrink-0 h-8 bg-amber-700">
-              <div className="flex items-center justify-center mr-6  bg-white border border-[#E2E4F5] shadow-sm px-3 py-2 h-8 ">
+            <Link href="/" className="shrink-0">
+              <div className="flex items-center justify-center !ml-2 bg-white border-3 border-[#E2E4F5] rounded-2xl w-16 h-14">
                 <Image 
                   src="/levantate_logo_square.svg" 
                   alt="Levantate Labs" 
                   width={32} 
                   height={32}
-                  className="w-8 h-8"
+                  className="w-6 h-6"
                 />
               </div>
             </Link>
 
           {/* Navigation Links - Desktop */}
-          <div className="hidden lg:flex items-center gap-3 xl:gap-4 flex-1 justify-center">
+          <div className="hidden lg:flex items-center gap-4 flex-1 justify-center !mx-4">
             <Link 
               href="#work" 
-              className="text-xs sm:text-sm font-medium text-gray-900 hover:text-gray-700 transition-colors whitespace-nowrap px-4 py-2 rounded-full hover:bg-white/80"
+              className="text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center"
             >
               Our Work
             </Link>
             <Link 
               href="#why" 
-              className="text-xs sm:text-sm font-medium text-gray-900 transition-colors whitespace-nowrap px-5 py-2 rounded-full bg-white shadow-sm border border-[#E2E4F5]"
+              className="text-xs sm:text-sm font-medium text-gray-700 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl hover:bg-gray-100 h-[48px] flex items-center"
             >
               Why Us
             </Link>
             <Link 
               href="#what" 
-              className="text-xs sm:text-sm font-medium text-gray-900 hover:text-gray-700 transition-colors whitespace-nowrap px-4 py-2 rounded-full hover:bg-white/80"
+              className="text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center"
             >
               What we do
             </Link>
           </div>
 
-          {/* Divider - Desktop */}
-          <div className="hidden lg:block h-12 w-px bg-gray-300"></div>
-
           {/* CTA Button - Desktop */}
           <Link 
             href="#contact"
-            className="hidden lg:flex items-center gap-3 bg-black text-white pl-2 pr-4 py-1.5 rounded-full hover:bg-gray-900 transition-all hover:scale-105 shrink-0 border-2 border-white"
+            className="hidden h-14 w-fit !px-2 !mr-2 lg:flex items-center gap-2 bg-black text-white rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
           >
-            <Image 
-              src="/levantate_logo_square.svg" 
-              alt="" 
-              width={28} 
-              height={28}
-              className="invert rounded-full bg-[#C4F7D4] p-1"
-            />
+            <div className="w-10 h-10 bg-[#C4F7D4] rounded-lg border border-white p-1.5 flex items-center justify-center">
+              <Image 
+                src="/levantate_logo_square.svg" 
+                alt="" 
+                width={20} 
+                height={20}
+                className="w-5 h-5"
+              />
+            </div>
             <div className="flex flex-col text-left leading-tight">
-              <span className="text-xs sm:text-sm font-semibold">Book an intro call</span>
+              <span className="text-xs sm:text-sm font-medium">Book an intro call</span>
               <span className="text-[10px] sm:text-xs text-gray-300">Friendly chat, no pressure</span>
             </div>
           </Link>

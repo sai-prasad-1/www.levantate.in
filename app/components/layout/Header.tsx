@@ -7,6 +7,7 @@ import { useState } from "react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeNav, setActiveNav] = useState<"work" | "why" | "what" | "blog" | "careers">("work");
 
   return (
     <motion.header
@@ -35,21 +36,44 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4 flex-1 justify-center !mx-4">
             <Link 
               href="#work" 
-              className="text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center"
+              onClick={() => setActiveNav("work")}
+              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center ${activeNav === "work" ? "bg-gray-100" : ""}`}
             >
               Our Work
             </Link>
             <Link 
               href="#why" 
-              className="text-xs sm:text-sm font-medium text-gray-700 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl hover:bg-gray-100 h-[48px] flex items-center"
+              onClick={() => setActiveNav("why")}
+              className={`text-xs sm:text-sm font-medium text-gray-700 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl hover:bg-gray-100 h-[48px] flex items-center ${activeNav === "why" ? "bg-gray-100" : ""}`}
             >
               Why Us
             </Link>
             <Link 
               href="#what" 
-              className="text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center"
+              onClick={() => setActiveNav("what")}
+              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center ${activeNav === "what" ? "bg-gray-100" : ""}`}
             >
               What we do
+            </Link>
+            <Link 
+              href="#what" 
+              onClick={() => setActiveNav("blog")}
+              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center ${activeNav === "blog" ? "bg-gray-100" : ""}`}
+            >
+             Blog
+            </Link>
+            <Link 
+              href="#what" 
+              onClick={() => setActiveNav("careers")}
+              className={`relative text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex flex-col items-center justify-center ${activeNav === "careers" ? "bg-gray-100" : ""}`}
+            >
+              <span
+                className="text-[9px] text-blue-500 font-semibold mb-0.5 tracking-wide  absolute top-0 animate-pulse"
+                
+              >
+                Hiring 
+              </span>
+              <span>Careers</span>
             </Link>
           </div>
 
@@ -123,22 +147,31 @@ export default function Header() {
             <div className="flex flex-col gap-4">
               <Link 
                 href="#work" 
-                className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2 ${activeNav === "work" ? "bg-gray-100 rounded-lg" : ""}`}
+                onClick={() => {
+                  setActiveNav("work");
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 Our Work
               </Link>
               <Link 
                 href="#why" 
-                className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2 ${activeNav === "why" ? "bg-gray-100 rounded-lg" : ""}`}
+                onClick={() => {
+                  setActiveNav("why");
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 Why Us
               </Link>
               <Link 
                 href="#what" 
-                className="text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2"
-                onClick={() => setIsMobileMenuOpen(false)}
+                className={`text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2 ${activeNav === "what" ? "bg-gray-100 rounded-lg" : ""}`}
+                onClick={() => {
+                  setActiveNav("what");
+                  setIsMobileMenuOpen(false);
+                }}
               >
                 What we do
               </Link>

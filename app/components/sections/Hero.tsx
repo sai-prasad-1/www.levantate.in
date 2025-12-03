@@ -143,6 +143,7 @@ const Hero = (props: Props) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {/* CTA Button - Desktop */}
+          {/*TODO: Make this button mobile friendly*/}
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}
@@ -150,7 +151,7 @@ const Hero = (props: Props) => {
           >
             <Link 
               href="#contact"
-              className="hidden h-14 w-fit !px-2 !mr-2 lg:flex items-center gap-2 bg-black text-white rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
+              className="h-14 w-fit !px-2 !mr-2 lg:flex items-center gap-2 bg-black text-white rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
             >
               <motion.div 
                 className="w-10 h-10 bg-[#C4F7D4] rounded-lg border border-white p-1.5 flex items-center justify-center"

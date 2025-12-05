@@ -1,6 +1,5 @@
 "use client";
 
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
@@ -53,7 +52,7 @@ const Hero = (props: Props) => {
         animate="visible"
       >
         <motion.h1 
-          className="text-lg font-bold !mb-2 text-[#38385B]"
+          className="text-xl font-agile !mb-2 text-[#38385B]"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -61,7 +60,7 @@ const Hero = (props: Props) => {
         </motion.h1>
         
         <motion.p 
-          className="text-7xl text-black font-regular"
+          className="text-7xl text-black font-onest"
           variants={headlineVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -69,7 +68,7 @@ const Hero = (props: Props) => {
         </motion.p>
         
         <motion.p 
-          className="text-lg text-gray-600 !mb-15 !mt-15"
+          className="text-lg text-gray-600 font-onest !mb-15 !mt-15"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -134,7 +133,7 @@ const Hero = (props: Props) => {
             animate="visible"
             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           ></motion.div>
-          <h1 className="text-lg font-bold text-[#38385B]">FUNDED STARTUPS + B2B TECH</h1>
+          <h1 className="text-lg font-agile text-[#38385B]">FUNDED STARTUPS + B2B TECH</h1>
         </motion.div>
 
         <motion.div 
@@ -167,8 +166,8 @@ const Hero = (props: Props) => {
                 />
               </motion.div>
               <div className="flex flex-col text-left leading-tight">
-                <span className="text-xs sm:text-sm font-medium">Book an intro call</span>
-                <span className="text-[10px] sm:text-xs text-gray-300">Friendly chat, no pressure</span>
+                <span className="text-xs sm:text-sm font-medium font-onest">Book an intro call</span>
+                <span className="text-[10px] sm:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
               </div>
             </Link>
           </motion.div>
@@ -178,7 +177,7 @@ const Hero = (props: Props) => {
           >
             <Link 
               href="#work" 
-              className="text-lg font-light underline text-[#38385B]"
+              className="text-lg font-medium font-onest underline text-[#38385B]"
             >
               Explore Our Work
             </Link>
@@ -186,7 +185,7 @@ const Hero = (props: Props) => {
         </motion.div>
         
         <motion.p 
-          className="text-sm text-[#38385B] !mt-6"
+          className="text-sm text-[#38385B] !mt-6 font-onest"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >

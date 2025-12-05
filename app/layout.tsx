@@ -1,11 +1,31 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Onest } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import StructuredData from "./components/StructuredData";
 
-const inter = Inter({
-  variable: "--font-inter",
+
+const onest = Onest({
+  variable: "--font-onest",
   subsets: ["latin"],
+  display: "swap",
+});
+
+// Agile custom font
+const agile = localFont({
+  src: [
+    {
+      path: "./fonts/agile.otf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "./fonts/agile.otf",
+      weight: "700",
+      style: "normal",
+    },
+  ],
+  variable: "--font-agile",
   display: "swap",
 });
 
@@ -93,7 +113,7 @@ export default function RootLayout({
         <meta name="theme-color" content="#000000" />
       </head>
       <body
-        className={`${inter.variable} antialiased`}
+        className={`${onest.variable} ${agile.variable} antialiased`}
       >
         <StructuredData />
         {children}

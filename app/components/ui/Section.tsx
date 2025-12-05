@@ -1,5 +1,6 @@
 import { HTMLAttributes, ReactNode } from "react";
 import NextImage from "next/image";
+import GlassDecor from "./GlassDecor";
 
 interface SectionProps extends HTMLAttributes<HTMLElement> {
   children: ReactNode;
@@ -7,6 +8,8 @@ interface SectionProps extends HTMLAttributes<HTMLElement> {
   customBg?: string;
   fullWidth?: boolean;
   noPadding?: boolean;
+  noBackgroundImage?: boolean;
+  showGlassDecor?: boolean;
 }
 
 export default function Section({
@@ -15,6 +18,8 @@ export default function Section({
   customBg,
   fullWidth = false,
   noPadding = false,
+  noBackgroundImage = false,
+  showGlassDecor = false,
   className = "",
   ...props
 }: SectionProps) {
@@ -29,23 +34,31 @@ export default function Section({
 
   return (
     <section
-      className={`${paddingClass} ${backgrounds[background]} ${className}`}
+      className={`${paddingClass} ${backgrounds[background]} ${className} relative`}
       style={background === "custom" && customBg ? { backgroundColor: customBg } : undefined}
       {...props}
     >
+      {showGlassDecor && (
+        <>
+          <GlassDecor position="left" />
+          <GlassDecor position="right" />
+        </>
+      )}
       {fullWidth ? (
         children
       ) : (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
-          <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-            <NextImage 
-              src="/images/section-gradient.svg" 
-              alt="Section Background" 
-              width={1000} 
-              height={1000}
-              className="object-contain"
-            />
-          </div>
+          {!noBackgroundImage && (
+            <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+              <NextImage 
+                src="/images/section-gradient.svg" 
+                alt="Section Background" 
+                width={1000} 
+                height={1000}
+                className="object-contain"
+              />
+            </div>
+          )}
           <div className="relative z-10">
             {children}
           </div>

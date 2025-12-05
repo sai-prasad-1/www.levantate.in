@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion } from 'framer-motion';
 
 const ScrollText = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -14,8 +13,8 @@ const ScrollText = () => {
     "LOOK LIKE A PROPER STARTUP",
   ];
 
-  // Duplicate items for seamless loop
-  const duplicatedItems = [...textItems, ...textItems];
+  // Duplicate items multiple times for seamless loop
+  const duplicatedItems = [...textItems, ...textItems, ...textItems, ...textItems];
   {/*TODO: Make this section mobile friendly*/}
 
   return (
@@ -149,33 +148,35 @@ const ScrollText = () => {
         onMouseEnter={() => setIsHovered(true)}
         onMouseLeave={() => setIsHovered(false)}
       >
-        <motion.div
+        <div
           className="flex items-center gap-12 whitespace-nowrap"
-          animate={{
-            x: isHovered ? '-50%' : '0%',
-          }}
-          transition={{
-            x: {
-              duration: 20,
-              ease: 'linear',
-              repeat: isHovered ? Infinity : 0,
-              repeatType: 'loop',
-            },
-          }}
           style={{
             width: 'fit-content',
+            animation: 'scroll-left 30s linear infinite',
+            animationPlayState: isHovered ? 'running' : 'paused',
           }}
         >
           {duplicatedItems.map((item, index) => (
             <span
               key={index}
-              className="text-lg font-medium text-[#38385B] px-4"
+              className="text-lg font-agile text-[#38385B] px-4"
             >
               {item}
             </span>
           ))}
-        </motion.div>
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes scroll-left {
+          0% {
+            transform: translateX(0);
+          }
+          100% {
+            transform: translateX(-50%);
+          }
+        }
+      `}</style>
     </div>
   );
 };

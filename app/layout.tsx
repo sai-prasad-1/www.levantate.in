@@ -3,6 +3,8 @@ import { Onest } from "next/font/google";
 import localFont from "next/font/local";
 import "./globals.css";
 import StructuredData from "./components/StructuredData";
+import Header from "./components/layout/Header";
+import Footer from "./components/layout/Footer";
 
 
 const onest = Onest({
@@ -116,7 +118,9 @@ export default function RootLayout({
         className={`${onest.variable} ${agile.variable} antialiased`}
       >
         <StructuredData />
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

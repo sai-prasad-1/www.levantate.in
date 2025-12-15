@@ -1,0 +1,121 @@
+{
+  "jobs": [
+    {
+      "jobId": 1,
+      "title": "Frontend Developer",
+      "category": "Tech & Engineers",
+      "location": "Remote",
+      "position": "Experienced",
+      "type": "Remote",
+      "aboutTheJob": "We are looking for a talented Frontend Developer to join our dynamic team. You will be responsible for building and maintaining user interfaces for our web applications using modern technologies like React, Next.js, and TypeScript. This role offers the opportunity to work on cutting-edge projects in blockchain and AI domains, collaborating with a passionate team dedicated to delivering exceptional user experiences.",
+      "responsibilities": [
+        "Develop and maintain responsive web applications using React and Next.js",
+        "Collaborate with designers to implement pixel-perfect UI components",
+        "Write clean, maintainable, and well-documented code",
+        "Optimize applications for maximum speed and scalability",
+        "Participate in code reviews and provide constructive feedback",
+        "Stay up-to-date with emerging trends and technologies in frontend development",
+        "Work closely with backend developers to integrate APIs",
+        "Debug and troubleshoot issues across different browsers and devices"
+      ],
+      "preferredQualifications": [
+        "3+ years of experience in frontend development",
+        "Strong proficiency in React, TypeScript, and modern CSS frameworks (Tailwind CSS preferred)",
+        "Experience with Next.js and server-side rendering",
+        "Familiarity with state management solutions (Redux, Zustand, or similar)",
+        "Understanding of RESTful APIs and GraphQL",
+        "Experience with version control systems (Git)",
+        "Strong problem-solving skills and attention to detail",
+        "Excellent communication and teamwork abilities"
+      ]
+    },
+    {
+      "jobId": 2,
+      "title": "Backend Developer",
+      "category": "Tech & Engineers",
+      "location": "India",
+      "position": "Entry",
+      "type": "In office",
+      "aboutTheJob": "Join our backend team to build robust and scalable server-side applications. You will work on designing and implementing APIs, database architectures, and microservices that power our products. This is an excellent opportunity for entry-level developers to learn and grow in a supportive environment while working on real-world projects.",
+      "responsibilities": [
+        "Design and develop RESTful APIs and microservices",
+        "Build and maintain database schemas and queries",
+        "Implement authentication and authorization mechanisms",
+        "Write unit tests and integration tests",
+        "Collaborate with frontend developers for seamless integration",
+        "Monitor and optimize application performance",
+        "Document technical specifications and API endpoints",
+        "Participate in agile development processes"
+      ],
+      "preferredQualifications": [
+        "Bachelor's degree in Computer Science or related field",
+        "Knowledge of Node.js, Python, or similar backend technologies",
+        "Understanding of database systems (PostgreSQL, MongoDB)",
+        "Familiarity with cloud platforms (AWS, GCP, or Azure)",
+        "Basic understanding of Docker and containerization",
+        "Strong analytical and problem-solving skills",
+        "Eagerness to learn and adapt to new technologies",
+        "Good communication skills"
+      ]
+    },
+    {
+      "jobId": 3,
+      "title": "Sales Executive",
+      "category": "Marketing & Sales",
+      "location": "India",
+      "position": "Intern",
+      "type": "In office",
+      "aboutTheJob": "We are seeking an enthusiastic Sales Intern to join our growing sales team. This internship offers hands-on experience in B2B sales, client relationship management, and business development. You will learn the fundamentals of selling technology solutions while working alongside experienced sales professionals.",
+      "responsibilities": [
+        "Assist in identifying and qualifying potential leads",
+        "Support the sales team in preparing proposals and presentations",
+        "Conduct market research to identify new business opportunities",
+        "Help maintain and update CRM database",
+        "Participate in client meetings and calls",
+        "Assist in organizing sales events and webinars",
+        "Prepare sales reports and analytics",
+        "Learn and apply sales methodologies and best practices"
+      ],
+      "preferredQualifications": [
+        "Currently pursuing or recently completed a degree in Business, Marketing, or related field",
+        "Strong verbal and written communication skills",
+        "Basic understanding of B2B sales processes",
+        "Proficiency in Microsoft Office Suite",
+        "Self-motivated with a positive attitude",
+        "Ability to work in a fast-paced environment",
+        "Interest in technology and software solutions",
+        "Prior internship experience is a plus"
+      ]
+    },
+    {
+      "jobId": 4,
+      "title": "Marketing Specialist",
+      "category": "Marketing & Sales",
+      "location": "Remote",
+      "position": "Experienced",
+      "type": "Remote",
+      "aboutTheJob": "We are looking for a creative and data-driven Marketing Specialist to lead our digital marketing initiatives. You will be responsible for developing and executing marketing campaigns, managing our online presence, and driving brand awareness. This remote position offers flexibility while working on exciting projects in the tech industry.",
+      "responsibilities": [
+        "Develop and execute comprehensive digital marketing strategies",
+        "Manage social media accounts and create engaging content",
+        "Plan and run paid advertising campaigns (Google Ads, LinkedIn, etc.)",
+        "Analyze marketing metrics and optimize campaigns for better ROI",
+        "Create compelling copy for websites, emails, and marketing materials",
+        "Collaborate with design team on visual content",
+        "Manage email marketing campaigns and automation",
+        "Stay updated on industry trends and competitor activities"
+      ],
+      "preferredQualifications": [
+        "3+ years of experience in digital marketing",
+        "Proven track record of successful marketing campaigns",
+        "Strong knowledge of SEO, SEM, and social media marketing",
+        "Experience with marketing tools (HubSpot, Google Analytics, etc.)",
+        "Excellent writing and content creation skills",
+        "Data-driven mindset with strong analytical abilities",
+        "Experience in B2B technology marketing is a plus",
+        "Creative thinking and ability to work independently"
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,45 @@
+{
+  "Openings": [
+    {
+      "category": "Marketing & Sales",
+      "jobId": 1,
+      "Title": "Sales Executive",
+      "Location": "India",
+      "Position": "Intern | Experienced | Entry",
+      "Type": "Remote | In office"
+    },
+    {
+      "category": "Tech & Engineers",
+      "jobId": 2,
+      "Title": "Software Engineer L1",
+      "Location": "India",
+      "Position": "Intern",
+      "Type": "Hybrid"
+    },
+    {
+      "category": "Tech & Engineers",
+      "jobId": 3,
+      "Title": "Software Engineer L2",
+      "Location": "India",
+      "Position": "Intern",
+      "Type": "Hybrid"
+    },
+    {
+      "category": "Product Management",
+      "jobId": 4,
+      "Title": "Product Manager",
+      "Location": "India",
+      "Position": "Experienced",
+      "Type": "Hybrid"
+    },
+    {
+      "category": "Operations / Accounts",
+      "jobId": 5,
+      "Title": "Operations Manager",
+      "Location": "India",
+      "Position": "Experienced",
+      "Type": "In office"
+    }
+  ]
+}
+

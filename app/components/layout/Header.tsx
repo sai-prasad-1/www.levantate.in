@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState } from "react";
 
@@ -16,9 +16,9 @@ export default function Header() {
       transition={{ duration: 0.6 }}
       className="fixed top-8 left-0 right-0 z-50"
     >
-      <div className="w-full flex justify-center">
-        <nav className="sm:w-fit rounded-3xl shadow-[0_22px_45px_rgba(15,23,42,0.18)] border border-[#E2E4F5] bg-white backdrop-blur-md min-h-18 flex justify-center items-center">
-          <div className="w-full flex items-center justify-between h-full">
+      <div className="w-full flex justify-center !px-4 lg:!px-0">
+        <nav className="w-full lg:w-fit rounded-3xl shadow-[0_22px_45px_rgba(15,23,42,0.18)] border border-[#E2E4F5] bg-white backdrop-blur-md min-h-18 flex justify-center items-center">
+          <div className="w-full flex items-center justify-between h-full !px-2 lg:!px-0">
           {/* Logo */}
             <Link href="/" className="shrink-0">
               <div className="flex items-center justify-center !ml-2 bg-white border-3 border-[#E2E4F5] rounded-2xl w-16 h-14">
@@ -63,7 +63,7 @@ export default function Header() {
              Blog
             </Link>
             <Link 
-              href="#what" 
+              href="/careers" 
               onClick={() => setActiveNav("careers")}
               className={`relative text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex flex-col items-center justify-center ${activeNav === "careers" ? "bg-gray-100" : ""}`}
             >
@@ -97,18 +97,10 @@ export default function Header() {
             </div>
           </Link>
 
-          {/* Mobile CTA Button */}
-          <Link 
-            href="#contact"
-            className="lg:hidden bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 transition-colors text-sm font-medium shrink-0"
-          >
-            Book a call
-          </Link>
-
           {/* Mobile Menu Button */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="lg:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="lg:hidden p-2 !mr-2 hover:bg-gray-100 rounded-lg transition-colors"
             aria-label="Toggle menu"
           >
             <svg 
@@ -117,69 +109,159 @@ export default function Header() {
               stroke="currentColor" 
               viewBox="0 0 24 24"
             >
-              {isMobileMenuOpen ? (
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M6 18L18 6M6 6l12 12" 
-                />
-              ) : (
-                <path 
-                  strokeLinecap="round" 
-                  strokeLinejoin="round" 
-                  strokeWidth={2} 
-                  d="M4 6h16M4 12h16M4 18h16" 
-                />
-              )}
+              <path 
+                strokeLinecap="round" 
+                strokeLinejoin="round" 
+                strokeWidth={2} 
+                d="M4 6h16M4 12h16M4 18h16" 
+              />
             </svg>
           </button>
         </div>
-
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-gray-200 px-6 py-4"
-          >
-            <div className="flex flex-col gap-4">
-              <Link 
-                href="#work" 
-                className={`text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2 ${activeNav === "work" ? "bg-gray-100 rounded-lg" : ""}`}
-                onClick={() => {
-                  setActiveNav("work");
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                Our Work
-              </Link>
-              <Link 
-                href="#why" 
-                className={`text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2 ${activeNav === "why" ? "bg-gray-100 rounded-lg" : ""}`}
-                onClick={() => {
-                  setActiveNav("why");
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                Why Us
-              </Link>
-              <Link 
-                href="#what" 
-                className={`text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors py-2 ${activeNav === "what" ? "bg-gray-100 rounded-lg" : ""}`}
-                onClick={() => {
-                  setActiveNav("what");
-                  setIsMobileMenuOpen(false);
-                }}
-              >
-                What we do
-              </Link>
-            </div>
-          </motion.div>
-        )}
         </nav>
       </div>
+
+      {/* Mobile Slide-in Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="lg:hidden fixed inset-0 bg-black/50 z-40"
+              onClick={() => setIsMobileMenuOpen(false)}
+            />
+            
+            {/* Slide-in Panel */}
+            <motion.div
+              initial={{ x: "-100%" }}
+              animate={{ x: 0 }}
+              exit={{ x: "-100%" }}
+              transition={{ duration: 0.3, ease: "easeOut" }}
+              className="lg:hidden fixed top-0 left-0 h-full w-3/4 bg-white z-50 shadow-2xl"
+            >
+              <div className="flex flex-col h-full">
+                {/* Header with Logo and Close */}
+                <div className="flex items-center justify-between !p-4 border-b border-gray-200">
+                  <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                    <div className="flex items-center justify-center bg-white border-2 border-[#E2E4F5] rounded-2xl w-14 h-12">
+                      <Image 
+                        src="/levantate_logo_square.svg" 
+                        alt="Levantate Labs" 
+                        width={28} 
+                        height={28}
+                        className="w-6 h-6"
+                      />
+                    </div>
+                  </Link>
+                  <button 
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                    aria-label="Close menu"
+                  >
+                    <svg 
+                      className="w-6 h-6" 
+                      fill="none" 
+                      stroke="currentColor" 
+                      viewBox="0 0 24 24"
+                    >
+                      <path 
+                        strokeLinecap="round" 
+                        strokeLinejoin="round" 
+                        strokeWidth={2} 
+                        d="M6 18L18 6M6 6l12 12" 
+                      />
+                    </svg>
+                  </button>
+                </div>
+
+                {/* Navigation Links */}
+                <div className="flex flex-col !p-4 gap-2 flex-1">
+                  <Link 
+                    href="#work" 
+                    className={`text-base font-medium text-gray-900 hover:bg-gray-100 transition-colors !py-3 !px-4 rounded-xl ${activeNav === "work" ? "bg-gray-100" : ""}`}
+                    onClick={() => {
+                      setActiveNav("work");
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Our Work
+                  </Link>
+                  <Link 
+                    href="#why" 
+                    className={`text-base font-medium text-gray-900 hover:bg-gray-100 transition-colors !py-3 !px-4 rounded-xl ${activeNav === "why" ? "bg-gray-100" : ""}`}
+                    onClick={() => {
+                      setActiveNav("why");
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Why Us
+                  </Link>
+                  <Link 
+                    href="#what" 
+                    className={`text-base font-medium text-gray-900 hover:bg-gray-100 transition-colors !py-3 !px-4 rounded-xl ${activeNav === "what" ? "bg-gray-100" : ""}`}
+                    onClick={() => {
+                      setActiveNav("what");
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    What we do
+                  </Link>
+                  <Link 
+                    href="#blog" 
+                    className={`text-base font-medium text-gray-900 hover:bg-gray-100 transition-colors !py-3 !px-4 rounded-xl ${activeNav === "blog" ? "bg-gray-100" : ""}`}
+                    onClick={() => {
+                      setActiveNav("blog");
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Blog
+                  </Link>
+                  <Link 
+                    href="/careers" 
+                    className={`relative text-base font-medium text-gray-900 hover:bg-gray-100 transition-colors !py-3 !px-4 rounded-xl flex items-center gap-2 ${activeNav === "careers" ? "bg-gray-100" : ""}`}
+                    onClick={() => {
+                      setActiveNav("careers");
+                      setIsMobileMenuOpen(false);
+                    }}
+                  >
+                    Careers
+                    <span className="text-[10px] text-blue-500 font-semibold animate-pulse">
+                      Hiring
+                    </span>
+                  </Link>
+                </div>
+
+                {/* CTA Button */}
+                <div className="!p-4 border-t border-gray-200">
+                  <Link 
+                    href="#contact"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                    className="flex items-center gap-3 w-full bg-black text-white !p-3 rounded-2xl hover:bg-gray-900 transition-all"
+                  >
+                    <div className="w-10 h-10 bg-[#C4F7D4] rounded-lg border border-white p-1.5 flex items-center justify-center shrink-0">
+                      <Image 
+                        src="/levantate_logo_square.svg" 
+                        alt="" 
+                        width={20} 
+                        height={20}
+                        className="w-5 h-5"
+                      />
+                    </div>
+                    <div className="flex flex-col text-left leading-tight">
+                      <span className="text-sm font-medium">Book an intro call</span>
+                      <span className="text-xs text-gray-300">Friendly chat, no pressure</span>
+                    </div>
+                  </Link>
+                </div>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
     </motion.header>
   );
 }

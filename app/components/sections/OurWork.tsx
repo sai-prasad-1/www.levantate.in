@@ -207,32 +207,32 @@ const OurWork = () => {
         {/* Cloud reveal animation */}
         <div 
           ref={cloudRef}
-          className="relative flex justify-center items-center !mt-100 h-[600px]"
+          className="relative flex justify-center items-center !mt-80 h-[600px]"
         >
           {/* Left cloud - starts at left edge, goes further left */}
           <motion.div 
-            className="absolute left-0 z-10"
+            className="absolute left-[-20%] z-10"
             style={{ x: cloudLeftX }}
           >
             <Image 
               src="/images/cloud-left.png" 
               alt="Cloud" 
-              width={1200} 
-              height={1000}
+              width={2000} 
+              height={2000}
               className="object-contain min-w-[60vw]"
             />
           </motion.div>
           
           {/* Right cloud - starts at right edge, goes further right */}
           <motion.div 
-            className="absolute right-0 z-10"
+            className="absolute right-[-20%] z-10"
             style={{ x: cloudRightX }}
           >
             <Image 
               src="/images/cloud-right.png" 
               alt="Cloud" 
-              width={1200} 
-              height={1000}
+              width={2000} 
+              height={2000}
               className="object-contain min-w-[60vw]"
             />
           </motion.div>
@@ -245,8 +245,8 @@ const OurWork = () => {
             <Image 
               src="/levantate_logo_square.svg" 
               alt="Logo" 
-              width={80} 
-              height={80}
+              width={100} 
+              height={100}
             />
           </motion.div>
         </div>

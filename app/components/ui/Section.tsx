@@ -49,15 +49,15 @@ export default function Section({
       ) : (
         <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative">
           {!noBackgroundImage && (
-            <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
-              <NextImage 
-                src="/images/section-gradient.svg" 
-                alt="Section Background" 
-                width={1000} 
-                height={1000}
-                className="object-contain"
-              />
-            </div>
+          <div className="absolute inset-0 flex items-center justify-center z-0 pointer-events-none">
+            <NextImage 
+              src="/images/section-gradient.svg" 
+              alt="Section Background" 
+              width={1000} 
+              height={1000}
+              className="object-contain"
+            />
+          </div>
           )}
           <div className="relative z-10">
             {children}

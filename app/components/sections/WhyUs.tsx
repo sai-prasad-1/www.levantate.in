@@ -125,6 +125,7 @@ const WhyUs = () => {
             </span>
           ))}
         </div>
+        
       </div>
     </Section>
   );

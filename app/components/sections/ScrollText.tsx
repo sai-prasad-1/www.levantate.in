@@ -17,7 +17,7 @@ const ScrollText = () => {
   const duplicatedItems = [...textItems, ...textItems, ...textItems, ...textItems];
   {/*TODO: Make this section mobile friendly*/}
 
-  return (
+    return (
     <div className="relative w-full overflow-hidden" style={{ paddingTop: '84px', paddingBottom: '84px', minHeight: '300px' }}>
       {/* Top Groove Borders - 3 grooves with 42px gap */}
       {/* Groove 1 - Smallest */}

@@ -4,23 +4,21 @@ import React from "react";
 
 const SectionDivider = () => {
   return (
-    <div className="relative w-full z-10" style={{ paddingTop: '50px', paddingBottom: '50px' }}>
+    <div className="relative w-full z-10 py-6 sm:py-8 md:py-[50px]">
       {/* Main horizontal groove line */}
       <div className="relative w-full flex items-center overflow-visible">
         {/* Left section - fades well before reaching dot */}
         <div className="flex-1 relative">
           <div
-            className="w-full"
+            className="w-full h-[1px] md:h-[2px]"
             style={{
-              height: "2px",
               background:
                 "linear-gradient(to right, transparent 0%, rgba(205, 205, 222, 0.2) 10%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 90%, transparent 100%)",
             }}
           />
           <div
-            className="absolute top-0 left-[10%] w-[80%]"
+            className="absolute top-0 left-[10%] w-[80%] h-[1px]"
             style={{
-              height: "1px",
               background:
                 "linear-gradient(to right, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 25%, #CDCDDE 75%, rgba(205, 205, 222, 0.2) 100%)",
               boxShadow:
@@ -34,18 +32,15 @@ const SectionDivider = () => {
         <div className="relative flex flex-col items-center overflow-visible">
           {/* Top vertical groove - fades well before dot */}
           <div
-            className="absolute bottom-full"
+            className="absolute bottom-full w-[1px] md:w-[2px] h-[40px] sm:h-[60px] md:h-[120px]"
             style={{
-              width: "2px",
-              height: "120px",
               background:
                 "linear-gradient(to top, transparent 0%, rgba(205, 205, 222, 0.2) 15%, #CDCDDE 35%, #CDCDDE 65%, rgba(205, 205, 222, 0.2) 85%, transparent 100%)",
             }}
           >
             <div
-              className="absolute left-0 top-[15%] h-[70%]"
+              className="absolute left-0 top-[15%] h-[70%] w-[1px]"
               style={{
-                width: "1px",
                 background:
                   "linear-gradient(to top, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 100%)",
                 boxShadow:
@@ -56,18 +51,15 @@ const SectionDivider = () => {
           </div>
           {/* Bottom vertical groove - fades well before dot */}
           <div
-            className="absolute top-full"
+            className="absolute top-full w-[1px] md:w-[2px] h-[40px] sm:h-[60px] md:h-[120px]"
             style={{
-              width: "2px",
-              height: "120px",
               background:
                 "linear-gradient(to bottom, transparent 0%, rgba(205, 205, 222, 0.2) 15%, #CDCDDE 35%, #CDCDDE 65%, rgba(205, 205, 222, 0.2) 85%, transparent 100%)",
             }}
           >
             <div
-              className="absolute left-0 top-[15%] h-[70%]"
+              className="absolute left-0 top-[15%] h-[70%] w-[1px]"
               style={{
-                width: "1px",
                 background:
                   "linear-gradient(to bottom, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 100%)",
                 boxShadow:
@@ -77,7 +69,7 @@ const SectionDivider = () => {
             />
           </div>
           <div
-            className="w-3 h-3 rounded-full z-10"
+            className="w-2 h-2 md:w-3 md:h-3 rounded-full z-10"
             style={{
               background: "#CDCDDE",
               boxShadow:
@@ -89,17 +81,15 @@ const SectionDivider = () => {
         {/* Middle section 1 - fades well before both dots */}
         <div className="flex-1 relative">
           <div
-            className="w-full"
+            className="w-full h-[1px] md:h-[2px]"
             style={{
-              height: "2px",
               background:
                 "linear-gradient(to right, transparent 0%, rgba(205, 205, 222, 0.2) 15%, #CDCDDE 35%, #CDCDDE 65%, rgba(205, 205, 222, 0.2) 85%, transparent 100%)",
             }}
           />
           <div
-            className="absolute top-0 left-[15%] w-[70%]"
+            className="absolute top-0 left-[15%] w-[70%] h-[1px]"
             style={{
-              height: "1px",
               background:
                 "linear-gradient(to right, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 100%)",
               boxShadow:
@@ -113,18 +103,15 @@ const SectionDivider = () => {
         <div className="relative flex flex-col items-center overflow-visible">
           {/* Top vertical groove */}
           <div
-            className="absolute bottom-full"
+            className="absolute bottom-full w-[1px] md:w-[2px] h-[40px] sm:h-[60px] md:h-[120px]"
             style={{
-              width: "2px",
-              height: "120px",
               background:
                 "linear-gradient(to top, transparent 0%, rgba(205, 205, 222, 0.2) 15%, #CDCDDE 35%, #CDCDDE 65%, rgba(205, 205, 222, 0.2) 85%, transparent 100%)",
             }}
           >
             <div
-              className="absolute left-0 top-[15%] h-[70%]"
+              className="absolute left-0 top-[15%] h-[70%] w-[1px]"
               style={{
-                width: "1px",
                 background:
                   "linear-gradient(to top, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 100%)",
                 boxShadow:
@@ -135,18 +122,15 @@ const SectionDivider = () => {
           </div>
           {/* Bottom vertical groove */}
           <div
-            className="absolute top-full"
+            className="absolute top-full w-[1px] md:w-[2px] h-[40px] sm:h-[60px] md:h-[120px]"
             style={{
-              width: "2px",
-              height: "120px",
               background:
                 "linear-gradient(to bottom, transparent 0%, rgba(205, 205, 222, 0.2) 15%, #CDCDDE 35%, #CDCDDE 65%, rgba(205, 205, 222, 0.2) 85%, transparent 100%)",
             }}
           >
             <div
-              className="absolute left-0 top-[15%] h-[70%]"
+              className="absolute left-0 top-[15%] h-[70%] w-[1px]"
               style={{
-                width: "1px",
                 background:
                   "linear-gradient(to bottom, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 100%)",
                 boxShadow:
@@ -156,7 +140,7 @@ const SectionDivider = () => {
             />
           </div>
           <div
-            className="w-3 h-3 rounded-full z-10"
+            className="w-2 h-2 md:w-3 md:h-3 rounded-full z-10"
             style={{
               background: "#CDCDDE",
               boxShadow:
@@ -168,17 +152,15 @@ const SectionDivider = () => {
         {/* Middle section 2 - fades well before both dots */}
         <div className="flex-1 relative">
           <div
-            className="w-full"
+            className="w-full h-[1px] md:h-[2px]"
             style={{
-              height: "2px",
               background:
                 "linear-gradient(to right, transparent 0%, rgba(205, 205, 222, 0.2) 15%, #CDCDDE 35%, #CDCDDE 65%, rgba(205, 205, 222, 0.2) 85%, transparent 100%)",
             }}
           />
           <div
-            className="absolute top-0 left-[15%] w-[70%]"
+            className="absolute top-0 left-[15%] w-[70%] h-[1px]"
             style={{
-              height: "1px",
               background:
                 "linear-gradient(to right, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 100%)",
               boxShadow:
@@ -192,18 +174,15 @@ const SectionDivider = () => {
         <div className="relative flex flex-col items-center overflow-visible">
           {/* Top vertical groove */}
           <div
-            className="absolute bottom-full"
+            className="absolute bottom-full w-[1px] md:w-[2px] h-[40px] sm:h-[60px] md:h-[120px]"
             style={{
-              width: "2px",
-              height: "120px",
               background:
                 "linear-gradient(to top, transparent 0%, rgba(205, 205, 222, 0.2) 15%, #CDCDDE 35%, #CDCDDE 65%, rgba(205, 205, 222, 0.2) 85%, transparent 100%)",
             }}
           >
             <div
-              className="absolute left-0 top-[15%] h-[70%]"
+              className="absolute left-0 top-[15%] h-[70%] w-[1px]"
               style={{
-                width: "1px",
                 background:
                   "linear-gradient(to top, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 100%)",
                 boxShadow:
@@ -214,18 +193,15 @@ const SectionDivider = () => {
           </div>
           {/* Bottom vertical groove */}
           <div
-            className="absolute top-full"
+            className="absolute top-full w-[1px] md:w-[2px] h-[40px] sm:h-[60px] md:h-[120px]"
             style={{
-              width: "2px",
-              height: "120px",
               background:
                 "linear-gradient(to bottom, transparent 0%, rgba(205, 205, 222, 0.2) 15%, #CDCDDE 35%, #CDCDDE 65%, rgba(205, 205, 222, 0.2) 85%, transparent 100%)",
             }}
           >
             <div
-              className="absolute left-0 top-[15%] h-[70%]"
+              className="absolute left-0 top-[15%] h-[70%] w-[1px]"
               style={{
-                width: "1px",
                 background:
                   "linear-gradient(to bottom, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 100%)",
                 boxShadow:
@@ -235,7 +211,7 @@ const SectionDivider = () => {
             />
           </div>
           <div
-            className="w-3 h-3 rounded-full z-10"
+            className="w-2 h-2 md:w-3 md:h-3 rounded-full z-10"
             style={{
               background: "#CDCDDE",
               boxShadow:
@@ -247,17 +223,15 @@ const SectionDivider = () => {
         {/* Right section - fades well before reaching dot */}
         <div className="flex-1 relative">
           <div
-            className="w-full"
+            className="w-full h-[1px] md:h-[2px]"
             style={{
-              height: "2px",
               background:
                 "linear-gradient(to right, transparent 0%, rgba(205, 205, 222, 0.2) 10%, #CDCDDE 30%, #CDCDDE 70%, rgba(205, 205, 222, 0.2) 90%, transparent 100%)",
             }}
           />
           <div
-            className="absolute top-0 left-[10%] w-[80%]"
+            className="absolute top-0 left-[10%] w-[80%] h-[1px]"
             style={{
-              height: "1px",
               background:
                 "linear-gradient(to right, rgba(205, 205, 222, 0.2) 0%, #CDCDDE 25%, #CDCDDE 75%, rgba(205, 205, 222, 0.2) 100%)",
               boxShadow:

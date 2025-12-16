@@ -34,7 +34,7 @@ export default function Section({
 
   return (
     <section
-      className={`${paddingClass} ${backgrounds[background]} ${className} relative`}
+      className={`${paddingClass} ${backgrounds[background]} ${className} relative !mt-5 !mb-5 sm:!mt-10 sm:!mb-10 md:!mt-10 md:!mb-10`}
       style={background === "custom" && customBg ? { backgroundColor: customBg } : undefined}
       {...props}
     >

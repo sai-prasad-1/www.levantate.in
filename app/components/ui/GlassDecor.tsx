@@ -16,7 +16,7 @@ const GlassDecor = ({ position = 'right', className = '' }: GlassDecorProps) => 
 
   return (
     <div 
-      className={`absolute top-0 bottom-0 pointer-events-none ${className}`}
+      className={`hidden md:block absolute top-0 bottom-0 pointer-events-none ${className}`}
       style={{
         width: '120px',
         ...positionStyle,

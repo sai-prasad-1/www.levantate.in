@@ -79,10 +79,10 @@ const WhyUs = () => {
   let wordIndex = 0;
 
   return (
-    <Section noBackgroundImage showGlassDecor className="!py-30 flex items-center justify-center">
+    <Section noBackgroundImage showGlassDecor className="!py-12 sm:!py-20 md:!py-30 flex items-center justify-center">
       <div ref={sectionRef}>
         <motion.div 
-          className="flex flex-col items-center justify-center gap-6 !mb-15"
+          className="flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-6 !mb-6 sm:!mb-10 md:!mb-15"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
@@ -94,11 +94,11 @@ const WhyUs = () => {
               alt="" 
               width={40} 
               height={40}
-              className="w-10 h-10"
+              className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
             />
           </motion.div>
           <motion.h1 
-            className="text-lg font-agile text-[#38385B]"
+            className="text-xs sm:text-sm md:text-lg font-agile text-[#38385B]"
             variants={itemVariants}
             transition={{ duration: 0.5, ease: "easeOut" }}
           >
@@ -106,7 +106,7 @@ const WhyUs = () => {
           </motion.h1>
         </motion.div>
 
-        <div className="text-center text-4xl font-onest leading-relaxed">
+        <div className="text-center text-lg sm:text-2xl md:text-3xl lg:text-4xl font-onest leading-relaxed px-4 sm:px-6 md:px-0">
           {allWords.map((line, lineIndex) => (
             <span key={lineIndex}>
               {line.words.map((word) => {

@@ -44,7 +44,7 @@ const Hero = (props: Props) => {
   };
 
   return (
-    <Section className="min-h-screen !mt-10 flex items-center justify-center">
+    <Section className="min-h-[70vh] sm:min-h-[80vh] md:min-h-screen !mt-20 flex items-center justify-center px-4 sm:px-6">
       <motion.div 
         className="text-center h-full w-full"
         variants={containerVariants}
@@ -52,7 +52,7 @@ const Hero = (props: Props) => {
         animate="visible"
       >
         <motion.h1 
-          className="text-sm sm:text-lg lg:text-xl font-agile !mb-2 text-[#38385B]"
+          className="text-[10px] sm:text-sm md:text-lg lg:text-xl font-agile !mb-2 text-[#38385B]"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -60,7 +60,7 @@ const Hero = (props: Props) => {
         </motion.h1>
         
         <motion.p 
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-black font-onest"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-black font-onest"
           variants={headlineVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
@@ -69,7 +69,7 @@ const Hero = (props: Props) => {
         </motion.p>
         
         <motion.p 
-          className="text-base sm:text-lg text-gray-600 font-onest !mb-8 sm:!mb-15 !mt-8 sm:!mt-15 px-2 sm:px-0"
+          className="text-sm sm:text-base md:text-lg text-gray-600 font-onest !mb-6 sm:!mb-10 md:!mb-15 !mt-6 sm:!mt-10 md:!mt-15 px-2 sm:px-0"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -78,7 +78,7 @@ const Hero = (props: Props) => {
         
         {/* Box with fading border */}
         <motion.div 
-          className="relative inline-block !p-2 !mb-8 sm:!mb-15"
+          className="relative inline-block !p-1.5 sm:!p-2 !mb-6 sm:!mb-10 md:!mb-15"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -134,11 +134,11 @@ const Hero = (props: Props) => {
             animate="visible"
             transition={{ duration: 1, ease: "easeOut", delay: 0.4 }}
           ></motion.div>
-          <h1 className="text-sm sm:text-base lg:text-lg font-agile text-[#38385B]">FUNDED STARTUPS + B2B TECH</h1>
+          <h1 className="text-[10px] sm:text-sm md:text-base lg:text-lg font-agile text-[#38385B]">FUNDED STARTUPS + B2B TECH</h1>
         </motion.div>
 
         <motion.div 
-          className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6"
+          className="flex flex-col sm:flex-row justify-center items-center gap-3 sm:gap-6"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -150,10 +150,10 @@ const Hero = (props: Props) => {
           >
             <Link 
               href="#contact"
-              className="h-14 w-fit !px-2 !pr-4 flex items-center gap-2 bg-black text-white rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
+              className="h-12 sm:h-14 w-fit !px-2 !pr-3 sm:!pr-4 flex items-center gap-2 bg-black text-white rounded-xl sm:rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
             >
               <motion.div 
-                className="w-10 h-10 bg-[#C4F7D4] rounded-lg border border-white p-1.5 flex items-center justify-center"
+                className="w-8 h-8 sm:w-10 sm:h-10 bg-[#C4F7D4] rounded-md sm:rounded-lg border border-white p-1 sm:p-1.5 flex items-center justify-center"
                 whileHover={{ rotate: 360 }}
                 transition={{ duration: 0.6 }}
               >
@@ -162,13 +162,13 @@ const Hero = (props: Props) => {
                   alt="" 
                   width={20} 
                   height={20}
-                  className="w-5 h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5"
                 />
               </motion.div>
               <div className="flex flex-col text-left leading-tight">
-                <span className="text-sm font-medium font-onest">Book an intro call</span>
-                <span className="text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
-      </div>
+                <span className="text-xs sm:text-sm font-medium font-onest">Book an intro call</span>
+                <span className="text-[10px] sm:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
+              </div>
             </Link>
           </motion.div>
           <motion.div
@@ -177,7 +177,7 @@ const Hero = (props: Props) => {
           >
             <Link 
               href="#work" 
-              className="text-base sm:text-lg font-medium font-onest underline text-[#38385B]"
+              className="text-sm sm:text-base md:text-lg font-medium font-onest underline text-[#38385B]"
             >
               Explore Our Work
             </Link>
@@ -185,7 +185,7 @@ const Hero = (props: Props) => {
         </motion.div>
         
         <motion.p 
-          className="text-xs sm:text-sm text-[#38385B] !mt-4 sm:!mt-6 font-onest px-4 sm:px-0"
+          className="text-[10px] sm:text-xs md:text-sm text-[#38385B] !mt-3 sm:!mt-4 md:!mt-6 font-onest px-4 sm:px-0"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >

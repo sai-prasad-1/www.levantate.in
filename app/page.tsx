@@ -10,11 +10,20 @@ export default function Home() {
     <main>
       <Hero />
       <ScrollText />
-      <WhyUs />
+      <section id="why">
+        <WhyUs />
+      </section>
       <SectionDivider />
-      <WhatDo />
+      <section id="what">
+        <WhatDo />
+      </section>
       <SectionDivider />
-      <OurWork />
+      <section id="work">
+        <OurWork />
+      </section>
+      <section id="contact">
+        {/* Contact section - add your contact form/info here */}
+      </section>
     </main>
   );
 }

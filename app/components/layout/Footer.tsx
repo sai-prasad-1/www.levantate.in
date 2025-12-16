@@ -11,23 +11,21 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="bg-[#EAEAF2] !pt-16 !pb-12 flex flex-col items-center justify-center">
+    <footer className="bg-[#EAEAF2] !pt-8 sm:!pt-12 md:!pt-16 !pb-6 sm:!pb-8 md:!pb-12 flex flex-col items-center justify-center">
       {/* Groove Divider */}
-      <div className="relative w-full !mb-10">
+      <div className="relative w-full !mb-6 sm:!mb-8 md:!mb-10">
         <div className="relative w-full flex items-center">
           {/* Left fade section */}
-          <div className="w-24 relative">
+          <div className="w-12 sm:w-16 md:w-24 relative">
             <div
-              className="w-full"
+              className="w-full h-[1px] sm:h-[2px]"
               style={{
-                height: "2px",
                 background: "linear-gradient(to right, transparent 0%, #CDCDDE 100%)",
               }}
             />
             <div
-              className="absolute top-0 w-full"
+              className="absolute top-0 w-full h-[1px]"
               style={{
-                height: "1px",
                 background: "linear-gradient(to right, transparent 0%, rgba(205, 205, 222, 0.6) 100%)",
                 boxShadow: "0 1px 3px rgba(255, 255, 255, 0.5)",
               }}
@@ -37,16 +35,14 @@ export default function Footer() {
           {/* Main line */}
           <div className="flex-1 relative">
             <div
-              className="w-full"
+              className="w-full h-[1px] sm:h-[2px]"
               style={{
-                height: "2px",
                 background: "#CDCDDE",
               }}
             />
             <div
-              className="absolute top-0 w-full"
+              className="absolute top-0 w-full h-[1px]"
               style={{
-                height: "1px",
                 background: "rgba(205, 205, 222, 0.8)",
                 boxShadow: "0 1px 3px rgba(255, 255, 255, 0.5), 0 0 6px rgba(255, 255, 255, 0.4)",
               }}
@@ -54,18 +50,16 @@ export default function Footer() {
           </div>
 
           {/* Right fade section */}
-          <div className="w-24 relative">
+          <div className="w-12 sm:w-16 md:w-24 relative">
             <div
-              className="w-full"
+              className="w-full h-[1px] sm:h-[2px]"
               style={{
-                height: "2px",
                 background: "linear-gradient(to left, transparent 0%, #CDCDDE 100%)",
               }}
             />
             <div
-              className="absolute top-0 w-full"
+              className="absolute top-0 w-full h-[1px]"
               style={{
-                height: "1px",
                 background: "linear-gradient(to left, transparent 0%, rgba(205, 205, 222, 0.6) 100%)",
                 boxShadow: "0 1px 3px rgba(255, 255, 255, 0.5)",
               }}
@@ -75,15 +69,15 @@ export default function Footer() {
       </div>
 
       {/* Footer Content */}
-      <div className="w-full mx-auto !px-8">
-        <div className="flex justify-between items-center">
+      <div className="w-full mx-auto !px-4 sm:!px-6 md:!px-8">
+        <div className="flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-0">
           {/* Footer Links */}
-          <div className="flex items-center gap-8">
+          <div className="flex flex-wrap justify-center sm:justify-start items-center gap-3 sm:gap-4 md:gap-8">
             {footerLinks.map((link) => (
               <Link
                 key={link.name}
                 href={link.href}
-                className="text-base font-onest text-[#38385B] hover:text-black transition-colors"
+                className="text-xs sm:text-sm md:text-base font-onest text-[#38385B] hover:text-black transition-colors"
               >
                 {link.name}
               </Link>
@@ -91,7 +85,7 @@ export default function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="text-base font-onest text-[#38385B]">
+          <p className="text-xs sm:text-sm md:text-base font-onest text-[#38385B]">
             {currentYear}@Levantate Labs
           </p>
         </div>

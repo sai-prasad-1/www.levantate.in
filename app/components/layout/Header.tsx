@@ -100,35 +100,35 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-4 flex-1 justify-center !mx-4">
             <button 
               onClick={() => scrollToSection("why", "why")}
-              className={`text-xs sm:text-sm font-medium text-gray-700 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl hover:bg-gray-100 h-[48px] flex items-center ${activeNav === "why" ? "bg-gray-100" : ""}`}
+              className={`text-xs sm:text-sm font-medium text-gray-700 transition-colors whitespace-nowrap !px-2 py-3 rounded-xl hover:bg-gray-100 h-[52px] flex items-center ${activeNav === "why" ? "bg-gray-100" : ""}`}
             >
               Why Us
             </button>
             <button 
               onClick={() => scrollToSection("what", "what")}
-              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center ${activeNav === "what" ? "bg-gray-100" : ""}`}
+              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-3 rounded-xl h-[52px] flex items-center ${activeNav === "what" ? "bg-gray-100" : ""}`}
             >
               What we do
             </button>
             <button 
               onClick={() => scrollToSection("work", "work")}
-              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center ${activeNav === "work" ? "bg-gray-100" : ""}`}
+              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-3 rounded-xl h-[52px] flex items-center ${activeNav === "work" ? "bg-gray-100" : ""}`}
             >
               Our Work
             </button>
             <button 
               onClick={() => scrollToSection("blog", "blog")}
-              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex items-center ${activeNav === "blog" ? "bg-gray-100" : ""}`}
+              className={`text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-3 rounded-xl h-[52px] flex items-center ${activeNav === "blog" ? "bg-gray-100" : ""}`}
             >
              Blog
             </button>
             <Link 
               href="/careers" 
               onClick={() => setActiveNav("careers")}
-              className={`relative text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-2 rounded-xl h-[48px] flex flex-col items-center justify-center ${activeNav === "careers" ? "bg-gray-100" : ""}`}
+              className={`relative text-xs sm:text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors whitespace-nowrap !px-2 py-3 rounded-xl h-[52px] flex flex-col items-center justify-center ${activeNav === "careers" ? "bg-gray-100" : ""}`}
             >
               <span
-                className="text-[9px] text-blue-500 font-semibold mb-0.5 tracking-wide absolute top-0 animate-pulse"
+                className="text-[9px] text-green-800 font-semibold tracking-wide absolute top-0.5 border border-green-500 rounded-full !px-1 bg-[#C4F7D4]"
               >
                 Hiring 
               </span>
@@ -284,7 +284,7 @@ export default function Header() {
                     }}
                   >
                     Careers
-                    <span className="text-[10px] text-blue-500 font-semibold animate-pulse">
+                    <span className="text-[10px] text-green-800 font-semibold border border-green-500 rounded-full !px-1 bg-[#C4F7D4]">
                       Hiring
                     </span>
                   </Link>

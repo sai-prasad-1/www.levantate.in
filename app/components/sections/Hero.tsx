@@ -44,7 +44,7 @@ const Hero = (props: Props) => {
   };
 
   return (
-    <Section className="min-h-[70vh] sm:min-h-[80vh] md:min-h-screen !mt-20 flex items-center justify-center px-4 sm:px-6">
+    <Section className="min-h-[70vh] sm:min-h-[80vh] md:min-h-screen !pt-30 flex items-center justify-center px-4 sm:px-6">
       <motion.div 
         className="text-center h-full w-full"
         variants={containerVariants}

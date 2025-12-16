@@ -1,36 +1,65 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 import Link from "next/link";
-import careersData from "../data/careers.json";
 import Section from "../components/ui/Section";
 
 interface Job {
-  category: string;
-  jobId: number;
-  Title: string;
-  Location: string;
-  Position: string;
-  Type: string;
+  id: number;
+  title: string;
+  about: string;
+  department: string;
+  responsibilities: string;
+  requirements: string;
+  location: string;
+  type: string;
+  salary: string;
+  closing_date: string;
+  created_at: string;
+  updated_at: string;
+  uuid: string;
+  loc_type: string | null;
+}
+
+interface Department {
+  department_name: string;
+  jobs: Job[];
+}
+
+interface JobsData {
+  departments: Department[];
 }
 
 const Careers = () => {
   const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
     new Set()
   );
+  const [jobsData, setJobsData] = useState<JobsData | null>(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
 
-  // Group jobs by category
-  const jobsByCategory = careersData.Openings.reduce((acc, job) => {
-    if (!acc[job.category]) {
-      acc[job.category] = [];
-    }
-    acc[job.category].push(job);
-    return acc;
-  }, {} as Record<string, Job[]>);
+  // Fetch jobs from API
+  useEffect(() => {
+    const fetchJobs = async () => {
+      try {
+        const response = await fetch("/api/jobs");
+        if (!response.ok) {
+          throw new Error("Failed to fetch jobs");
+        }
+        const data = await response.json();
+        setJobsData(data);
+      } catch (err) {
+        setError("Failed to load job openings. Please try again later.");
+        console.error("Error fetching jobs:", err);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  const categories = Object.keys(jobsByCategory);
+    fetchJobs();
+  }, []);
 
   const toggleCategory = (category: string) => {
     setExpandedCategories((prev) => {
@@ -72,9 +101,44 @@ const Careers = () => {
     },
   };
 
+  // Loading state
+  if (loading) {
+    return (
+      <main>
+        <Section fullWidth className="w-full min-h-screen flex items-center justify-center !pt-40 !py-20">
+          <div className="flex flex-col items-center gap-4">
+            <div className="w-10 h-10 border-4 border-[#38385B] border-t-transparent rounded-full animate-spin" />
+            <p className="text-lg font-onest text-[#5A5A7A]">Loading openings...</p>
+          </div>
+        </Section>
+      </main>
+    );
+  }
+
+  // Error state
+  if (error) {
+    return (
+      <main>
+        <Section fullWidth className="w-full min-h-screen flex items-center justify-center !pt-40 !py-20">
+          <div className="text-center">
+            <p className="text-lg font-onest text-red-500 !mb-4">{error}</p>
+            <button 
+              onClick={() => window.location.reload()}
+              className="!px-6 !py-2 bg-[#38385B] text-white rounded-xl font-onest font-medium hover:bg-[#2A2A45] transition-colors"
+            >
+              Try Again
+            </button>
+          </div>
+        </Section>
+      </main>
+    );
+  }
+
+  const departments = jobsData?.departments || [];
+
   return (
     <main>
-      <Section fullWidth className="w-full min-h-screen flex items-center justify-center !py-20">
+      <Section fullWidth className="w-full min-h-screen flex items-center justify-center !pt-40 !py-20">
           <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8">
             {/* Title */}
             <motion.h1 
@@ -87,6 +151,17 @@ const Careers = () => {
               Current Openings
             </motion.h1>
 
+            {/* No jobs message */}
+            {departments.length === 0 && (
+              <motion.p 
+                className="text-center text-lg font-onest text-[#5A5A7A]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+              >
+                No job openings available at the moment. Check back later!
+              </motion.p>
+            )}
+
             {/* Job Categories */}
             <motion.div 
               className="space-y-4"
@@ -95,13 +170,13 @@ const Careers = () => {
               animate="visible"
               transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
             >
-          {categories.map((category, index) => {
-            const isExpanded = expandedCategories.has(category);
-            const jobs = jobsByCategory[category];
+          {departments.map((department) => {
+            const isExpanded = expandedCategories.has(department.department_name);
+            const jobs = department.jobs;
 
             return (
               <motion.div 
-                key={category} 
+                key={department.department_name} 
                 variants={itemVariants}
                 transition={{ duration: 0.5, ease: "easeOut" }}
                 className="!mb-2 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 rounded-2xl"
@@ -112,17 +187,22 @@ const Careers = () => {
               >
                 {/* Category Header */}
                 <button
-                  onClick={() => toggleCategory(category)}
+                  onClick={() => toggleCategory(department.department_name)}
                   className="w-full flex items-center justify-between !px-6 !py-5 text-left hover:bg-gray-50 transition-colors"
                 >
                   <h2 className="text-xl font-onest font-medium text-black">
-                    {category}
+                    {department.department_name}
                   </h2>
-                  {isExpanded ? (
-                    <FaChevronUp className="w-4 h-4 text-black" />
-                  ) : (
-                    <FaChevronDown className="w-4 h-4 text-black" />
-                  )}
+                  <div className="flex items-center gap-3">
+                    <span className="text-sm font-onest text-[#5A5A7A]">
+                      {jobs.length} {jobs.length === 1 ? "position" : "positions"}
+                    </span>
+                    {isExpanded ? (
+                      <FaChevronUp className="w-4 h-4 text-black" />
+                    ) : (
+                      <FaChevronDown className="w-4 h-4 text-black" />
+                    )}
+                  </div>
                 </button>
 
                 {/* Jobs List */}
@@ -138,7 +218,7 @@ const Careers = () => {
                       <div className="!px-6 !pb-4">
                         {jobs.map((job, index) => (
                           <motion.div 
-                            key={job.jobId}
+                            key={job.id}
                             initial={{ opacity: 0, x: -10 }}
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ duration: 0.3, delay: index * 0.1 }}
@@ -146,18 +226,18 @@ const Careers = () => {
                             {index > 0 && (
                               <div className="h-[1px] bg-[#E2E4F5] !my-4" />
                             )}
-                            <div className="flex items-center justify-between !py-2">
+                            <div className="flex flex-col sm:flex-row sm:items-center justify-between !py-2 gap-3">
                               <div className="flex-1">
                                 <h3 className="text-lg font-onest font-medium text-black !mb-1">
-                                  {job.Title}
+                                  {job.title}
                                 </h3>
                                 <p className="text-sm font-onest text-[#5A5A7A]">
-                                  {job.Location} | {job.Position} | {job.Type}
+                                  {job.location} | {job.type} {job.loc_type && `| ${job.loc_type}`}
                                 </p>
                               </div>
                               <Link 
-                                href={`/careers/${job.jobId}`}
-                                className="!ml-6 !px-6 !py-2 bg-[#38385B] text-white rounded-xl font-onest font-medium hover:bg-[#2A2A45] transition-colors"
+                                href={`/careers/${job.uuid}`}
+                                className="w-full sm:w-auto text-center sm:!ml-6 !px-6 !py-2 bg-[#38385B] text-white rounded-xl font-onest font-medium hover:bg-[#2A2A45] transition-colors"
                               >
                                 Apply Now
                               </Link>
@@ -180,4 +260,3 @@ const Careers = () => {
 };
 
 export default Careers;
-

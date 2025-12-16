@@ -8,7 +8,7 @@ import { usePathname, useRouter } from "next/navigation";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [activeNav, setActiveNav] = useState<"work" | "why" | "what" | "blog" | "careers" | "contact">("why");
+  const [activeNav, setActiveNav] = useState<"work" | "why" | "what" | "blog" | "careers" | "contact" | "">("");
   const pathname = usePathname();
   const router = useRouter();
 
@@ -57,7 +57,7 @@ export default function Header() {
     };
   }, [pathname]);
 
-  const scrollToSection = (sectionId: string, navKey: typeof activeNav) => {
+  const scrollToSection = (sectionId: string, navKey: "work" | "why" | "what" | "blog" | "careers" | "contact") => {
     setActiveNav(navKey);
     
     // If we're not on the home page, navigate there first
@@ -84,7 +84,7 @@ export default function Header() {
         <nav className="w-full lg:w-fit rounded-3xl shadow-[0_22px_45px_rgba(15,23,42,0.18)] border border-[#E2E4F5] bg-white backdrop-blur-md min-h-18 flex justify-center items-center">
           <div className="w-full flex items-center justify-between h-full !px-2 lg:!px-0">
           {/* Logo */}
-            <Link href="/" className="shrink-0">
+            <Link href="/" className="shrink-0" onClick={() => setActiveNav("")}>
               <div className="flex items-center justify-center !ml-2 bg-white border-3 border-[#E2E4F5] rounded-2xl w-16 h-14">
                 <Image 
                   src="/levantate_logo_square.svg" 
@@ -205,7 +205,7 @@ export default function Header() {
               <div className="flex flex-col h-full">
                 {/* Header with Logo and Close */}
                 <div className="flex items-center justify-between !p-4 border-b border-gray-200">
-                  <Link href="/" onClick={() => setIsMobileMenuOpen(false)}>
+                  <Link href="/" onClick={() => { setIsMobileMenuOpen(false); setActiveNav(""); }}>
                     <div className="flex items-center justify-center bg-white border-2 border-[#E2E4F5] rounded-2xl w-14 h-12">
                       <Image 
                         src="/levantate_logo_square.svg" 

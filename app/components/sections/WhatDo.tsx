@@ -1,6 +1,7 @@
 "use client";
 
 import Section from "../ui/Section";
+import { InteractiveDotGridCross, InteractiveDotGrid } from "../ui/InteractiveDots";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useRef, useState, useEffect } from "react";
@@ -8,9 +9,9 @@ import NextImage from "next/image";
 import Link from "next/link";
 
 // Team member card component
-const TeamCard = ({ name, role }: { name: string; role: string }) => (
+const TeamCard = ({ name, role, image }: { name: string; role: string, image: string }) => (
   <div className="flex items-center gap-2 sm:gap-3 bg-white rounded-xl sm:rounded-2xl !px-2 sm:!px-3 !pr-4 sm:!pr-6 !py-1.5 sm:!py-2 shadow-sm border border-[#E2E4F5] shrink-0">
-    <div className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#CDCDDE] shrink-0" />
+    <Image src={image} alt={name} width={44} height={44} className="w-8 h-8 sm:w-11 sm:h-11 rounded-lg sm:rounded-xl bg-[#CDCDDE] shrink-0 object-cover" />
     <div className="flex flex-col">
       <span className="text-[10px] sm:text-xs font-onest text-[#7B7B9E]">{name}</span>
       <span className="text-xs sm:text-base font-onest font-medium text-[#38385B] whitespace-nowrap">{role}</span>
@@ -24,7 +25,7 @@ const MarqueeRow = ({
   startDirection = "left",
   speed = 15
 }: { 
-  items: { name: string; role: string }[]; 
+  items: { name: string; role: string, image: string }[]; 
   startDirection?: "left" | "right";
   speed?: number;
 }) => {
@@ -49,7 +50,7 @@ const MarqueeRow = ({
         {[0, 1].map((setIndex) => (
           <div key={setIndex} className="flex gap-3 sm:gap-5 shrink-0">
             {items.map((item, idx) => (
-              <TeamCard key={`${setIndex}-${idx}`} name={item.name} role={item.role} />
+              <TeamCard key={`${setIndex}-${idx}`} name={item.name} role={item.role} image={item.image} />
             ))}
           </div>
         ))}
@@ -163,28 +164,6 @@ const FontCycleText = ({ text }: { text: string }) => {
   );
 };
 
-// Team member card component
-const TeamMember = ({ name, role }: { name: string; role: string }) => (
-  <div
-    className="flex items-center gap-3 px-4 py-3 rounded-xl shrink-0"
-    style={{ background: 'rgba(255, 255, 255, 0.7)' }}
-  >
-    <div
-      className="w-10 h-10 rounded-full bg-gray-300 overflow-hidden"
-      style={{ background: '#C5C5D5' }}
-    >
-      {/* Placeholder avatar */}
-      <div className="w-full h-full flex items-center justify-center text-gray-500 text-sm font-medium">
-        {name.charAt(0)}
-      </div>
-    </div>
-    <div className="flex flex-col">
-      <span className="text-[#8A8A9A] text-sm">{name}</span>
-      <span className="text-[#1a1a2e] font-semibold text-sm whitespace-nowrap">{role}</span>
-    </div>
-  </div>
-);
-
 const WhatDo = () => {
   const sectionRef = useRef<HTMLDivElement>(null);
   
@@ -206,10 +185,6 @@ const WhatDo = () => {
       y: 0,
     },
   };
-
-
-
-
 
   return (
     <Section noBackgroundImage showGlassDecor className="!py-12 sm:!py-20 md:!py-30 flex items-center justify-center px-4 sm:px-6 md:px-0">
@@ -265,33 +240,8 @@ const WhatDo = () => {
                 <h1 className="text-xl sm:text-2xl md:text-4xl font-onest font-medium text-[#38385B] !mb-2 sm:!mb-4">Specialists<br /> Not Generalists</h1>
                 <p className="text-sm sm:text-base md:text-xl font-onest text-[#38385B]">We are experts in clarity, positioning and performance. No Filler, No fluff</p>
               </div>
-              {/*Pattern for the dots*/}
-              <div className="flex items-center justify-center h-32 sm:h-40 md:h-1/2 w-full">
-                <div className="relative flex items-center justify-center">
-                  <div className="flex items-center gap-2 sm:gap-3.5">
-                    {Array.from({ length: 17 }).map((_, i) => (
-                      <div key={`h-${i}`} className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-[#CDCDDE]" />
-                    ))}
-                  </div>
-
-                  <div className="absolute flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
-                    {Array.from({ length: 7 }).map((_, i) => (
-                      <div key={`v-${i}`} className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-[#CDCDDE]" />
-                    ))}
-                  </div>
-
-                  <div className="absolute flex flex-col items-center gap-3 sm:gap-4 md:gap-6">
-                    <div className="flex gap-3 sm:gap-4 md:gap-6">
-                      <div className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-[#CDCDDE]" />
-                      <div className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-[#CDCDDE]" />
-                    </div>
-                    <div className="flex gap-3 sm:gap-4 md:gap-6">
-                      <div className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-[#CDCDDE]" />
-                      <div className="w-[8px] h-[8px] sm:w-[10px] sm:h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-[#CDCDDE]" />
-                    </div>
-                  </div>
-                </div>
-              </div>
+              {/*Pattern for the dots - interactive on hover*/}
+              <InteractiveDotGridCross />
             </div>
           </div>
           {/* Right card */}
@@ -307,26 +257,26 @@ const WhatDo = () => {
                 <div className="flex flex-col gap-2 sm:gap-3">
                   <MarqueeRow 
                     items={[
-                      { name: "Christo Paul", role: "Product Designer" },
-                      { name: "M Akhil P Raj", role: "Blockchain Dev" },
-                      { name: "Amal Manoj", role: "AI/ML Specialist" },
+                      { name: "Christo Paul", role: "Product Designer", image: "/team/Christo.jpeg" },
+                      { name: "M Akhil P Raj", role: "Blockchain Dev", image: "/team/Akhil.jpeg" },
+                      { name: "Amal Manoj", role: "AI/ML Specialist", image: "/team/Amal.jpeg" },
                     ]}
                     startDirection="left"
                     speed={12}
                   />
                   <MarqueeRow 
                     items={[
-                      { name: "Sai Prasad", role: "Lead Developer" },
-                      { name: "Austin Simpson", role: "Protagonist" },
-                      { name: "Farhan", role: "Lead Developer" },
+                      { name: "Sai Prasad", role: "Lead Developer", image: "/team/Sai.jpeg" },
+                      { name: "Austin Simpson", role: "Product Manager", image: "/team/Austin.jpeg" },
+                      { name: "Farhan", role: "Backend Developer", image: "/team/Farhan.jpeg" },
                     ]}
                     startDirection="right"
                     speed={14}
                   />
                   <MarqueeRow 
                     items={[
-                      { name: "Anoop", role: "Frontend Developer" },
-                      { name: "Sai", role: "Lead Developer" },
+                      { name: "Anoop", role: "Frontend Developer", image: "/team/Anoop.jpeg" },
+                      { name: "Sai", role: "Lead Developer", image: "/team/Sai.jpeg" },
                     ]}
                     startDirection="left"
                     speed={10}
@@ -375,13 +325,12 @@ const WhatDo = () => {
                 </p>
               </div>
               {/* Dot pattern - Hidden on mobile */}
-              <div className="hidden md:flex w-1/4 items-center justify-end">
-                <div className="grid grid-cols-7 gap-4">
-                  {Array.from({ length: 126 }).map((_, i) => (
-                    <div key={i} className="w-[10px] h-[10px] rounded-full bg-[#CDCDDE]" />
-                  ))}
-                </div>
-              </div>
+              <InteractiveDotGrid 
+                count={126} 
+                cols={7} 
+                gap="gap-4" 
+                containerClassName="hidden md:flex w-1/4 items-center justify-end" 
+              />
             </div>
           </div>
         </motion.div>

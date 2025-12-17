@@ -43,13 +43,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.7,
     },
     {
-      url: `${baseUrl}/terms`,
+      url: `${baseUrl}/terms-and-conditions`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,
     },
     {
-      url: `${baseUrl}/privacy`,
+      url: `${baseUrl}/privacy-policy`,
       lastModified: now,
       changeFrequency: "yearly",
       priority: 0.3,

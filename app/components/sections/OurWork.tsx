@@ -162,31 +162,41 @@ const OurWork = () => {
                   We&apos;ll talk through your goals, blockers and what you actually need. No fluff. No 10-page briefs
                 </p>
                 {/* CTA Button */}
-                <motion.div
-                  whileHover={{ scale: 1.02 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="!mt-auto"
-                >
-                    <div className="w-full flex justify-center items-center">
-                    <button 
-                      onClick={() => {}}
-                      className="h-10 sm:h-12 md:h-14 w-fit !px-2 flex items-center justify-center sm:justify-start gap-2 bg-black text-white rounded-xl sm:rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5] cursor-pointer"
+                <div className="w-full flex justify-center items-center !mt-auto">
+                  <motion.div
+                    whileHover="hover"
+                    whileTap={{ scale: 0.98 }}
+                    variants={{
+                      hover: { scale: 1.05 }
+                    }}
+                    transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                  >
+                    <Link 
+                      href="#contact"
+                      className="h-10 sm:h-12 md:h-14 w-fit !px-1.5 sm:!px-2 !pr-2 sm:!pr-3 md:!pr-4 flex items-center gap-1.5 sm:gap-2 bg-black text-white rounded-lg sm:rounded-xl md:rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
                     >
-                      <div className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[#C4F7D4] rounded-md sm:rounded-lg border border-white p-1 sm:p-1.5 flex items-center justify-center">
+                      <motion.div 
+                        className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[#C4F7D4] rounded-md sm:rounded-lg border border-white p-0.5 sm:p-1 md:p-1.5 flex items-center justify-center"
+                        variants={{
+                          hover: { rotate: 360 }
+                        }}
+                        transition={{ duration: 0.6 }}
+                      >
                         <Image 
                           src="/levantate_logo_square.svg" 
                           alt="" 
                           width={20} 
                           height={20}
-                          className="w-4 h-4 sm:w-5 sm:h-5"
+                          className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5"
                         />
-                      </div>
+                      </motion.div>
                       <div className="flex flex-col text-left leading-tight">
-                        <span className="text-xs sm:text-sm font-medium">Book an intro call</span>
+                        <span className="text-[10px] sm:text-xs md:text-sm font-medium font-onest">Book an intro call</span>
+                        <span className="text-[8px] sm:text-[10px] md:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
                       </div>
-                    </button>
-                  </div>
-                </motion.div>
+                    </Link>
+                  </motion.div>
+                </div>
                 <p className="text-[10px] sm:text-xs font-onest text-black !mt-3 sm:!mt-4 text-center">
                   Only 20-30 min<br/>Friendly chat, no pressure
                 </p>

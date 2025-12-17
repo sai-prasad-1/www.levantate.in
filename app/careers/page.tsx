@@ -40,8 +40,7 @@ interface JobsData {
 async function getJobs(): Promise<JobsData | null> {
   try {
     // Use internal API route to keep backend URL centralized
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
-    const response = await fetch(`${baseUrl}/api/jobs`, {
+    const response = await fetch(`${process.env.NEXT_PRIVATE_BACKEND_URL}/api/jobs`, {
       next: { revalidate: 60 }, // Revalidate every 60 seconds
     });
 

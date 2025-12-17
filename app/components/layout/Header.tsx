@@ -140,24 +140,39 @@ export default function Header() {
           </div>
 
           {/* CTA Button - Desktop */}
-          <button 
-            onClick={() => scrollToSection("contact", "contact")}
-            className="hidden h-14 w-fit !px-2 !mr-2 lg:flex items-center gap-2 bg-black text-white rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5] cursor-pointer"
+          <motion.div
+            whileHover="hover"
+            whileTap={{ scale: 0.98 }}
+            variants={{
+              hover: { scale: 1.05 }
+            }}
+            transition={{ type: "spring", stiffness: 400, damping: 17 }}
           >
-            <div className="w-10 h-10 bg-[#C4F7D4] rounded-lg border border-white p-1.5 flex items-center justify-center">
-              <Image 
-                src="/levantate_logo_square.svg" 
-                alt="" 
-                width={20} 
-                height={20}
-                className="w-5 h-5"
-              />
-            </div>
-            <div className="flex flex-col text-left leading-tight">
-              <span className="text-xs sm:text-sm font-medium">Book an intro call</span>
-              <span className="text-[10px] sm:text-xs text-gray-300">Friendly chat, no pressure</span>
-            </div>
-          </button>
+            <Link 
+              href="#contact"
+              className="hidden h-14 w-fit !px-2 !mr-2 lg:flex items-center gap-2 bg-black text-white rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5] cursor-pointer"
+            >
+              <motion.div 
+                className="w-8 h-8 sm:w-10 sm:h-10 bg-[#C4F7D4] rounded-md sm:rounded-lg border border-white p-1 sm:p-1.5 flex items-center justify-center"
+                variants={{
+                  hover: { rotate: 360 }
+                }}
+                transition={{ duration: 0.6 }}
+              >
+                <Image 
+                  src="/levantate_logo_square.svg" 
+                  alt="" 
+                  width={20} 
+                  height={20}
+                  className="w-4 h-4 sm:w-5 sm:h-5"
+                />
+              </motion.div>
+              <div className="flex flex-col text-left leading-tight">
+                <span className="text-xs sm:text-sm font-medium font-onest">Book an intro call</span>
+                <span className="text-[10px] sm:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
+              </div>
+            </Link>
+          </motion.div>
 
           {/* Mobile Menu Button */}
           <button 

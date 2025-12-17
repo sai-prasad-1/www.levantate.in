@@ -414,17 +414,22 @@ const WhatDo = () => {
               className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10"
             />
             <motion.div
-              whileHover={{ scale: 1.05 }}
+              whileHover="hover"
               whileTap={{ scale: 0.98 }}
+              variants={{
+                hover: { scale: 1.05 }
+              }}
               transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               <Link 
                 href="#contact"
-                className="h-12 sm:h-14 w-fit !px-2 !pr-3 sm:!pr-4 flex items-center gap-2 bg-black text-white rounded-xl sm:rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
+                className="h-10 sm:h-12 md:h-14 w-fit !px-1.5 sm:!px-2 !pr-2 sm:!pr-3 md:!pr-4 flex items-center gap-1.5 sm:gap-2 bg-black text-white rounded-lg sm:rounded-xl md:rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
               >
                 <motion.div 
-                  className="w-8 h-8 sm:w-10 sm:h-10 bg-[#C4F7D4] rounded-md sm:rounded-lg border border-white p-1 sm:p-1.5 flex items-center justify-center"
-                  whileHover={{ rotate: 360 }}
+                  className="w-7 h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 bg-[#C4F7D4] rounded-md sm:rounded-lg border border-white p-0.5 sm:p-1 md:p-1.5 flex items-center justify-center"
+                  variants={{
+                    hover: { rotate: 360 }
+                  }}
                   transition={{ duration: 0.6 }}
                 >
                   <Image 
@@ -432,12 +437,12 @@ const WhatDo = () => {
                     alt="" 
                     width={20} 
                     height={20}
-                    className="w-4 h-4 sm:w-5 sm:h-5"
+                    className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5"
                   />
                 </motion.div>
                 <div className="flex flex-col text-left leading-tight">
-                  <span className="text-xs sm:text-sm font-medium font-onest">Book an intro call</span>
-                  <span className="text-[10px] sm:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
+                  <span className="text-[10px] sm:text-xs md:text-sm font-medium font-onest">Book an intro call</span>
+                  <span className="text-[8px] sm:text-[10px] md:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
                 </div>
               </Link>
             </motion.div>

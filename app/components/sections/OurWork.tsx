@@ -38,15 +38,15 @@ const OurWork = () => {
   
   const { scrollYProgress } = useScroll({
     target: cloudRef,
-    offset: ["start end", "end start"]
+    offset: ["start 0.8", "end 0.2"]
   });
   
-  // Animate clouds: start at edges, move outward as scroll progresses
-  const cloudLeftX = useTransform(scrollYProgress, [0, 0.4], ["0%", "-50%"]);
-  const cloudRightX = useTransform(scrollYProgress, [0, 0.4], ["0%", "50%"]);
+  // Animate clouds: start at edges, move outward as scroll progresses (slower animation)
+  const cloudLeftX = useTransform(scrollYProgress, [0.2, 0.8], ["0%", "-50%"]);
+  const cloudRightX = useTransform(scrollYProgress, [0.2, 0.8], ["0%", "50%"]);
   // Logo fades in, then dissolves out
-  const logoOpacity = useTransform(scrollYProgress, [0.15, 0.35, 0.6, 0.8], [0, 1, 1, 0]);
-  const logoScale = useTransform(scrollYProgress, [0.15, 0.35, 0.6, 0.8], [0.5, 1, 1, 1.2]);
+  const logoOpacity = useTransform(scrollYProgress, [0.25, 0.4, 0.6, 0.75], [0, 1, 1, 0]);
+  const logoScale = useTransform(scrollYProgress, [0.25, 0.4, 0.6, 0.75], [0.5, 1, 1, 1.2]);
 
   const containerVariants = {
     hidden: { opacity: 0 },
@@ -69,17 +69,17 @@ const OurWork = () => {
 
 
   return (
-    <Section showGlassDecor className="!py-12 sm:!py-20 md:!py-30 flex items-center justify-center px-4 sm:px-6 md:px-0">
+    <Section showGlassDecor className="!py-12 sm:!py-20 md:!py-30 flex items-center justify-center">
       <div ref={sectionRef} className="w-full">
         
         {/* Cloud reveal animation - Now first */}
         <div 
           ref={cloudRef}
-          className="relative flex justify-center items-center h-[200px] sm:h-[350px] md:h-[600px] overflow-hidden md:overflow-visible !mb-16 sm:!mb-24 md:!mb-32"
+          className="relative flex justify-center items-center h-[180px] sm:h-[280px] md:h-[450px] lg:h-[600px] overflow-visible !mb-12 sm:!mb-20 md:!mb-28 lg:!mb-32"
         >
           {/* Left cloud - starts at left edge, goes further left */}
           <motion.div 
-            className="absolute left-[-5%] sm:left-[-10%] md:left-[-20%] z-10"
+            className="absolute left-[-15%] sm:left-[-18%] md:left-[-22%] lg:left-[-25%] z-10"
             style={{ x: cloudLeftX }}
           >
             <Image 
@@ -87,13 +87,13 @@ const OurWork = () => {
               alt="Cloud" 
               width={2000} 
               height={2000}
-              className="object-contain w-[45vw] sm:w-[55vw] md:min-w-[75vw]"
+              className="object-contain w-[70vw] sm:w-[75vw] md:w-[85vw] lg:min-w-[90vw]"
             />
           </motion.div>
           
           {/* Right cloud - starts at right edge, goes further right */}
           <motion.div 
-            className="absolute right-[-5%] sm:right-[-10%] md:right-[-20%] z-10"
+            className="absolute right-[-15%] sm:right-[-18%] md:right-[-22%] lg:right-[-25%] z-10"
             style={{ x: cloudRightX }}
           >
             <Image 
@@ -101,7 +101,7 @@ const OurWork = () => {
               alt="Cloud" 
               width={2000} 
               height={2000}
-              className="object-contain w-[45vw] sm:w-[55vw] md:min-w-[75vw]"
+              className="object-contain w-[70vw] sm:w-[75vw] md:w-[85vw] lg:min-w-[90vw]"
             />
           </motion.div>
           
@@ -142,15 +142,15 @@ const OurWork = () => {
 
         {/* Process Cards */}
         <motion.div 
-          className="flex flex-col md:flex-row justify-center items-center gap-4 sm:gap-6"
+          className="flex flex-col lg:flex-row justify-center items-center gap-4 sm:gap-6 w-full"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.3 }}
           variants={containerVariants}
         >
           {/* Card 1 - Let's have a chat */}
-          <motion.div variants={itemVariants} transition={{ duration: 0.5, ease: "easeOut" }} className="w-full md:w-auto">
-            <ProcessCard className="w-full md:w-80 h-auto md:h-100">
+          <motion.div variants={itemVariants} transition={{ duration: 0.5, ease: "easeOut" }} className="sm:w-1/2 px-10! lg:w-auto">
+            <ProcessCard className="w-full lg:w-80 h-auto lg:h-100">
               <div className="flex flex-col h-full !p-4 sm:!p-6">
                 {/* Header */}
                 <div className="flex justify-between items-start !mb-4 sm:!mb-6">
@@ -195,8 +195,8 @@ const OurWork = () => {
           </motion.div>
 
           {/* Card 2 - Receive your proposal */}
-          <motion.div variants={itemVariants} transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }} className="w-full md:w-auto">
-            <ProcessCard className="w-full md:w-80 h-auto md:h-100">
+          <motion.div variants={itemVariants} transition={{ duration: 0.5, ease: "easeOut", delay: 0.1 }} className="sm:w-1/2 px-10! lg:w-auto">
+            <ProcessCard className="w-full lg:w-80 h-auto lg:h-100">
               <div className="flex flex-col h-full !p-4 !pb-0 sm:!p-6 sm:!pb-0">
                 {/* Header */}
                 <div className="flex justify-between items-start !mb-4 sm:!mb-6">
@@ -222,8 +222,8 @@ const OurWork = () => {
           </motion.div>
 
           {/* Card 3 - Kick off your project */}
-          <motion.div variants={itemVariants} transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }} className="w-full md:w-auto">
-            <ProcessCard className="w-full md:w-80 h-auto md:h-100">
+          <motion.div variants={itemVariants} transition={{ duration: 0.5, ease: "easeOut", delay: 0.2 }} className="sm:w-1/2 px-10! lg:w-auto">
+            <ProcessCard className="w-full lg:w-80 h-auto lg:h-100">
               <div className="flex flex-col h-full !p-4 sm:!p-6 !pb-0 sm:!pb-0">
                 {/* Header */}
                 <div className="flex justify-start items-start !mb-4 sm:!mb-6">

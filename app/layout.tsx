@@ -108,14 +108,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth overflow-x-hidden">
       <head>
         <link rel="icon" href="/levantate_logo_square_white.svg" />
         <link rel="canonical" href="https://www.levantate.in" />
         <meta name="theme-color" content="#000000" />
       </head>
       <body
-        className={`${onest.variable} ${agile.variable} antialiased`}
+        className={`${onest.variable} ${agile.variable} antialiased overflow-x-hidden max-w-full`}
       >
         <StructuredData />
         <Header />

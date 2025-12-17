@@ -89,7 +89,7 @@ export const InteractiveDotGridCross = ({
 
   return (
     <div 
-      className={`flex items-center justify-center h-32 sm:h-40 md:h-1/2 w-full ${className}`}
+      className={`flex items-center justify-center h-32 sm:h-40 md:h-1/2 w-full ${className} hidden lg:flex`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >

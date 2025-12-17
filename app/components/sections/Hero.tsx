@@ -44,15 +44,15 @@ const Hero = (props: Props) => {
   };
 
   return (
-    <Section className="min-h-[70vh] sm:min-h-[80vh] md:min-h-screen !pt-30 flex items-center justify-center px-4 sm:px-6">
+    <Section className="min-h-[70vh] sm:min-h-[80vh] md:min-h-screen pt-30! flex items-center justify-center px-4 sm:px-6">
       <motion.div 
-        className="text-center h-full w-full"
+        className="text-center h-full w-full px-6! sm:px-0"
         variants={containerVariants}
         initial="hidden"
         animate="visible"
       >
         <motion.h1 
-          className="text-[10px] sm:text-sm md:text-lg lg:text-xl font-agile !mb-2 text-[#38385B]"
+          className="text-[10px] sm:text-sm md:text-lg lg:text-xl font-agile mb-2! text-[#38385B]"
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
@@ -64,7 +64,7 @@ const Hero = (props: Props) => {
           variants={headlineVariants}
           transition={{ duration: 0.8, ease: "easeOut" }}
         >
-          Become the <br className="hidden sm:block"/>
+          Become the <br/>
           <span className="sm:hidden"> </span>obvious choice.
         </motion.p>
         
@@ -73,7 +73,7 @@ const Hero = (props: Props) => {
           variants={itemVariants}
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
-          Sharpen your positioning, look enterprise-ready, and ship a high-converting<span className="hidden md:inline"><br/></span><span className="md:hidden"> </span>website that sells, builds trust in seconds and moves your pipeline now.
+          Sharpen your positioning, look enterprise-ready, and ship a high-converting<br className='hidden md:inline'/>website that sells, builds trust in seconds and moves your pipeline now.
         </motion.p>
         
         {/* Box with fading border */}

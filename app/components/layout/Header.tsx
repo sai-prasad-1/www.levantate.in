@@ -19,6 +19,9 @@ export default function Header() {
       // Set active based on current page
       if (pathname.startsWith("/careers")) {
         setActiveNav("careers");
+      } else {
+        // Clear active nav for other pages (privacy, cookies, terms, etc.)
+        setActiveNav("");
       }
       return;
     }

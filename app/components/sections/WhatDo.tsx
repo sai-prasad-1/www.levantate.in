@@ -187,7 +187,7 @@ const WhatDo = () => {
   };
 
   return (
-    <Section noBackgroundImage showGlassDecor className="!py-12 sm:!py-20 md:!py-30 flex items-center justify-center px-4 sm:px-6 md:px-0">
+    <Section noBackgroundImage showGlassDecor className="py-12! sm:py-20! md:py-30! px-10! flex items-center justify-center  sm:px-6 md:px-0">
       <div ref={sectionRef} className="w-full">
         <motion.div 
           className="flex flex-col items-center justify-center gap-3 sm:gap-4 md:gap-6 !mb-8 sm:!mb-10 md:!mb-15"
@@ -226,31 +226,31 @@ const WhatDo = () => {
         </motion.div>
         {/* Cards */}
         <motion.div
-          className="flex flex-col md:flex-row justify-center !mt-8 sm:!mt-12 md:!mt-16 gap-4 sm:gap-6"
+          className="flex flex-col lg:flex-row justify-center items-center !mt-8 sm:!mt-12 md:!mt-14 lg:!mt-16 gap-4 sm:gap-5 md:gap-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
           {/* Left card */}
-          <div className="w-full md:w-130 h-auto md:h-150 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-4 rounded-xl sm:rounded-2xl">
+          <div className="w-full md:w-[28rem] lg:w-130 h-auto lg:h-150 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-4 rounded-xl sm:rounded-2xl">
             <div className="w-full h-full flex flex-col items-start justify-start border-[1px] border-[#C3C3D6] bg-[#EAEAF2] rounded-lg sm:rounded-xl">
-              <div className="flex flex-col items-start justify-start !px-4 sm:!px-6 !py-6 sm:!py-10">
-                <h3 className="text-sm sm:text-lg md:text-xl font-onest text-[#38385B] !mb-2 sm:!mb-4">Specialists</h3>
-                <h1 className="text-xl sm:text-2xl md:text-4xl font-onest font-medium text-[#38385B] !mb-2 sm:!mb-4">Specialists<br /> Not Generalists</h1>
-                <p className="text-sm sm:text-base md:text-xl font-onest text-[#38385B]">We are experts in clarity, positioning and performance. No Filler, No fluff</p>
+              <div className="flex flex-col items-start justify-start !px-4 sm:!px-6 md:!px-8 !py-6 sm:!py-8 md:!py-10">
+                <h3 className="text-sm sm:text-lg md:text-xl font-onest text-[#38385B] !mb-2 sm:!mb-3 md:!mb-4">Specialists</h3>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-onest font-medium text-[#38385B] !mb-2 sm:!mb-3 md:!mb-4">Specialists<br /> Not Generalists</h1>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-onest text-[#38385B]">We are experts in clarity, positioning and performance. No Filler, No fluff</p>
               </div>
-              {/*Pattern for the dots - interactive on hover*/}
-              <InteractiveDotGridCross />
+              {/*Pattern for the dots - interactive on hover, hidden on tablet */}
+                <InteractiveDotGridCross />
             </div>
           </div>
           {/* Right card */}
-          <div className="w-full md:w-130 h-auto md:h-150 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-4 rounded-xl sm:rounded-2xl">
+          <div className="w-full md:w-[28rem] lg:w-130 h-auto lg:h-150 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-4 rounded-xl sm:rounded-2xl">
             <div className="w-full h-full flex flex-col items-start justify-start border-[1px] border-[#C3C3D6] bg-[#EAEAF2] rounded-lg sm:rounded-xl overflow-hidden">
-              <div className="flex flex-col items-start justify-start !px-4 sm:!px-6 !py-6 sm:!py-10">
-                <h3 className="text-sm sm:text-lg md:text-xl font-onest text-[#38385B] !mb-2 sm:!mb-4">Bookmarked</h3>
-                <h1 className="text-xl sm:text-2xl md:text-4xl font-onest font-medium text-[#38385B] !mb-2 sm:!mb-4">Small team.<br/>Big outcomes.</h1>
-                <p className="text-sm sm:text-base md:text-xl font-onest text-[#38385B]">We bring the right people to the table. Zero bloat, Strategy, design, and dev working continuously as agile.</p>
+              <div className="flex flex-col items-start justify-start !px-4 sm:!px-6 md:!px-8 !py-6 sm:!py-8 md:!py-10">
+                <h3 className="text-sm sm:text-lg md:text-xl font-onest text-[#38385B] !mb-2 sm:!mb-3 md:!mb-4">Bookmarked</h3>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-onest font-medium text-[#38385B] !mb-2 sm:!mb-3 md:!mb-4">Small team.<br/>Big outcomes.</h1>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-onest text-[#38385B]">We bring the right people to the table. Zero bloat, Strategy, design, and dev working continuously as agile.</p>
               </div>
               {/* Team member cards - Back and forth scroll */}
               <div className="flex-1 w-full overflow-hidden !pb-4">
@@ -287,82 +287,85 @@ const WhatDo = () => {
           </div>
         </motion.div>
         <motion.div
-          className="flex flex-col md:flex-row justify-center !mt-4 sm:!mt-6 md:!mt-8 gap-4 sm:gap-6"
+          className="flex flex-col lg:flex-row justify-center items-center lg:items-stretch !mt-4 sm:!mt-5 md:!mt-6 lg:!mt-8 gap-4 sm:gap-5 md:gap-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
           {/* Left column - Stats */}
-          <div className="flex flex-row md:flex-col gap-4 sm:gap-6">
+          <div className="flex flex-row lg:flex-col gap-4 sm:gap-5 md:gap-6 w-full md:w-[28rem] lg:w-auto lg:h-120">
             {/* Stat Card 1 */}
-            <div className="flex-1 md:w-60 h-32 sm:h-40 md:h-57 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-4 rounded-xl sm:rounded-2xl">
+            <div className="flex-1 lg:w-60 h-32 sm:h-36 md:h-40 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-3 md:!p-4 rounded-xl sm:rounded-2xl">
               <div className="w-full h-full flex flex-col items-center justify-center border-[1px] border-[#C3C3D6] bg-white rounded-lg sm:rounded-xl">
-                <span className="text-3xl sm:text-4xl md:text-6xl font-onest font-regular text-[#38385B]">8+</span>
-                <span className="text-sm sm:text-base md:text-xl font-onest text-[#38385B] !mt-2 sm:!mt-4">Specialists</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-onest font-regular text-[#38385B]">8+</span>
+                <span className="text-sm sm:text-base md:text-lg lg:text-xl font-onest text-[#38385B] !mt-2 sm:!mt-3 md:!mt-4">Specialists</span>
               </div>
             </div>
             {/* Stat Card 2 */}
-            <div className="flex-1 md:w-60 h-32 sm:h-40 md:h-57 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-4 rounded-xl sm:rounded-2xl">
+            <div className="flex-1 lg:w-60 h-32 sm:h-36 md:h-40 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-3 md:!p-4 rounded-xl sm:rounded-2xl">
               <div className="w-full h-full flex flex-col items-center justify-center border-[1px] border-[#C3C3D6] bg-white rounded-lg sm:rounded-xl">
-                <span className="text-3xl sm:text-4xl md:text-6xl font-onest font-regular text-[#38385B]">99%</span>
-                <span className="text-sm sm:text-base md:text-xl font-onest text-[#38385B] !mt-2 sm:!mt-4">Client Retention</span>
+                <span className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-onest font-regular text-[#38385B]">99%</span>
+                <span className="text-sm sm:text-base md:text-lg lg:text-xl font-onest text-[#38385B] !mt-2 sm:!mt-3 md:!mt-4">Client Retention</span>
               </div>
             </div>
           </div>
           {/* Right card - Agile Methodology */}
-          <div className="w-full md:w-200 h-auto md:h-120 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-4 rounded-xl sm:rounded-2xl">
-            <div className="w-full h-full flex flex-col md:flex-row border-[1px] border-[#C3C3D6] bg-[#EAEAF2] rounded-lg sm:rounded-xl overflow-hidden">
+          <div className="w-full md:w-[28rem] lg:w-200 h-auto lg:h-120 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-3 md:!p-4 rounded-xl sm:rounded-2xl">
+            <div className="w-full h-full flex flex-col lg:flex-row border-[1px] border-[#C3C3D6] bg-[#EAEAF2] rounded-lg sm:rounded-xl overflow-hidden">
               {/* Content */}
-              <div className="flex flex-col items-start justify-start !px-4 sm:!px-6 md:!px-8 !py-6 sm:!py-8 md:!py-10 w-full md:w-3/4">
-                <h3 className="text-xs sm:text-sm md:text-xl font-onest text-[#38385B] tracking-wider !mb-2 sm:!mb-4">AGILE METHODOLOGY</h3>
-                <h1 className="text-xl sm:text-2xl md:text-4xl font-onest font-medium text-[#38385B] !mb-3 sm:!mb-6 leading-tight">Strategy<br/>and conversion focused.</h1>
-                <p className="text-sm sm:text-base md:text-xl font-onest text-[#5A5A7A] !mb-3 sm:!mb-6 leading-relaxed">
+              <div className="flex flex-col items-start justify-start !px-4 sm:!px-6 md:!px-8 !py-6 sm:!py-8 md:!py-10 w-full lg:w-3/4">
+                <h3 className="text-xs sm:text-sm md:text-base lg:text-xl font-onest text-[#38385B] tracking-wider !mb-2 sm:!mb-3 md:!mb-4">AGILE METHODOLOGY</h3>
+                <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-onest font-medium text-[#38385B] !mb-3 sm:!mb-4 md:!mb-6 leading-tight">Strategy<br/>and conversion focused.</h1>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-onest text-[#5A5A7A] !mb-3 sm:!mb-4 md:!mb-6 leading-relaxed">
                   Product is only powerful when it moves its metrics. Everything we create is crafted to convert, retain and grow.
                 </p>
-                <p className="text-sm sm:text-base md:text-xl font-onest text-[#5A5A7A] leading-relaxed">
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl font-onest text-[#5A5A7A] leading-relaxed">
                   We&apos;re here for version 1, and version 10. Continuous progress. <span className="font-semibold text-[#38385B]">No complacency. Built to evolve.</span>
                 </p>
               </div>
-              {/* Dot pattern - Hidden on mobile */}
+              {/* Dot pattern - Hidden on mobile and tablet */}
               <InteractiveDotGrid 
                 count={126} 
                 cols={7} 
                 gap="gap-4" 
-                containerClassName="hidden md:flex w-1/4 items-center justify-end" 
+                containerClassName="hidden lg:flex w-1/4 items-center justify-end" 
               />
             </div>
           </div>
         </motion.div>
 
         <motion.div
-          className="flex justify-center !mt-4 sm:!mt-6 md:!mt-8 gap-4 sm:gap-6"
+          className="flex justify-center items-center !mt-4 sm:!mt-5 md:!mt-6 lg:!mt-8 gap-4 sm:gap-5 md:gap-6"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut", delay: 0.4 }}
         >
           {/* Not an agency card */}
-          <div className="w-full md:w-266 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-4 rounded-xl sm:rounded-2xl">
-            <div className="w-full h-full flex flex-col sm:flex-row items-center gap-4 sm:gap-6 md:gap-8 border-[1px] border-[#C3C3D6] bg-white rounded-lg sm:rounded-xl !px-3 sm:!px-4 !py-4 sm:!py-4">
-              {/* Logo */}
-              <div className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 bg-[#E5E9F5] border-[1px] border-[#C2C2D6] rounded-lg sm:rounded-xl flex items-center justify-center shrink-0">
-                <Image 
-                  src="/levantate_logo_square.svg" 
-                  alt="Levantate Logo" 
-                  width={72} 
-                  height={72}
-                  className="w-10 h-10 sm:w-14 sm:h-14 md:w-[72px] md:h-[72px]"
-                />
+          <div className="w-full md:w-[28rem] lg:w-266 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 sm:!p-3 md:!p-4 rounded-xl sm:rounded-2xl">
+            <div className="w-full h-full flex flex-col lg:flex-row items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8 border-[1px] border-[#C3C3D6] bg-white rounded-lg sm:rounded-xl !px-3 sm:!px-4 md:!px-5 !py-4 sm:!py-5 md:!py-6">
+              {/* Logo + Title row - stays horizontal on sm and md */}
+              <div className="flex flex-col sm:flex-row items-center gap-4 sm:gap-5 md:gap-6 lg:gap-8">
+                {/* Logo */}
+                <div className="w-20 h-20 sm:w-24 sm:h-24 md:w-28 md:h-28 lg:w-36 lg:h-36 bg-[#E5E9F5] border-[1px] border-[#C2C2D6] rounded-lg sm:rounded-xl flex items-center justify-center shrink-0">
+                  <Image 
+                    src="/levantate_logo_square.svg" 
+                    alt="Levantate Logo" 
+                    width={72} 
+                    height={72}
+                    className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-[72px] lg:h-[72px]"
+                  />
+                </div>
+                {/* Title */}
+                <h2 className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-onest font-medium text-[#38385B] text-center sm:text-left whitespace-nowrap">
+                  We are not<br/>an agency
+                </h2>
               </div>
-              {/* Title */}
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-onest font-medium text-[#38385B] text-center sm:text-left whitespace-nowrap">
-                We are not<br/>an agency
-              </h2>
-              {/* Divider - Hidden on mobile */}
-              <div className="hidden sm:block h-16 md:h-20 w-[1px] bg-[#C3C3D6]" />
-              {/* Description */}
-              <p className="text-sm sm:text-lg md:text-2xl font-onest text-[#38385B] leading-relaxed text-center sm:text-left">
+              {/* Divider - Hidden on mobile and tablet */}
+              <div className="hidden lg:block h-16 lg:h-20 w-[1px] bg-[#C3C3D6]" />
+              {/* Description - goes below on tablet, inline on desktop */}
+              <p className="text-sm sm:text-base md:text-lg lg:text-2xl font-onest text-[#38385B] leading-relaxed text-center lg:text-left">
                 We&apos;re a lean, independent studio doing good work for good people. Without the overhead, handoffs, or hierarchy.
               </p>
             </div>
@@ -370,7 +373,7 @@ const WhatDo = () => {
         </motion.div>
 
         <motion.div
-          className="relative flex flex-col justify-center items-center !mt-16 sm:!mt-24 md:!mt-42 gap-4 sm:gap-6 !mb-8 sm:!mb-12 md:!mb-16"
+          className="relative flex flex-col justify-center items-center !mt-16 sm:!mt-20 md:!mt-32 lg:!mt-42 gap-4 sm:gap-5 md:gap-6 !mb-8 sm:!mb-10 md:!mb-12 lg:!mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}

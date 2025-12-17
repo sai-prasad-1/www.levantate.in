@@ -1,10 +1,15 @@
-"use client";
-
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { FaChevronDown, FaChevronUp } from "react-icons/fa";
-import Link from "next/link";
+import type { Metadata } from "next";
 import Section from "../components/ui/Section";
+import JobAccordion from "./JobAccordion";
+
+export const metadata: Metadata = {
+  title: "Careers | Levantate Labs",
+  description: "Join Levantate Labs! Explore current job openings and be part of a team building innovative digital products.",
+  openGraph: {
+    title: "Careers | Levantate Labs",
+    description: "Join Levantate Labs! Explore current job openings and be part of a team building innovative digital products.",
+  },
+};
 
 interface Job {
   id: number;
@@ -32,231 +37,51 @@ interface JobsData {
   departments: Department[];
 }
 
-const Careers = () => {
-  const [expandedCategories, setExpandedCategories] = useState<Set<string>>(
-    new Set()
-  );
-  const [jobsData, setJobsData] = useState<JobsData | null>(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  // Fetch jobs from API
-  useEffect(() => {
-    const fetchJobs = async () => {
-      try {
-        const response = await fetch("/api/jobs");
-        if (!response.ok) {
-          throw new Error("Failed to fetch jobs");
-        }
-        const data = await response.json();
-        setJobsData(data);
-      } catch (err) {
-        setError("Failed to load job openings. Please try again later.");
-        console.error("Error fetching jobs:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchJobs();
-  }, []);
-
-  const toggleCategory = (category: string) => {
-    setExpandedCategories((prev) => {
-      const newSet = new Set(prev);
-      if (newSet.has(category)) {
-        newSet.delete(category);
-      } else {
-        newSet.add(category);
-      }
-      return newSet;
+async function getJobs(): Promise<JobsData | null> {
+  try {
+    // Use internal API route to keep backend URL centralized
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || "http://localhost:3000";
+    const response = await fetch(`${baseUrl}/api/jobs`, {
+      next: { revalidate: 60 }, // Revalidate every 60 seconds
     });
-  };
 
-  // Animation variants
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
+    if (!response.ok) {
+      throw new Error("Failed to fetch jobs");
+    }
 
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
-  const titleVariants = {
-    hidden: { opacity: 0, y: -20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-    },
-  };
-
-  // Loading state
-  if (loading) {
-    return (
-      <main>
-        <Section fullWidth className="w-full min-h-screen flex items-center justify-center !pt-40 !py-20">
-          <div className="flex flex-col items-center gap-4">
-            <div className="w-10 h-10 border-4 border-[#38385B] border-t-transparent rounded-full animate-spin" />
-            <p className="text-lg font-onest text-[#5A5A7A]">Loading openings...</p>
-          </div>
-        </Section>
-      </main>
-    );
+    return await response.json();
+  } catch (error) {
+    console.error("Error fetching jobs:", error);
+    return null;
   }
+}
 
-  // Error state
-  if (error) {
-    return (
-      <main>
-        <Section fullWidth className="w-full min-h-screen flex items-center justify-center !pt-40 !py-20">
-          <div className="text-center">
-            <p className="text-lg font-onest text-red-500 !mb-4">{error}</p>
-            <button 
-              onClick={() => window.location.reload()}
-              className="!px-6 !py-2 bg-[#38385B] text-white rounded-xl font-onest font-medium hover:bg-[#2A2A45] transition-colors"
-            >
-              Try Again
-            </button>
-          </div>
-        </Section>
-      </main>
-    );
-  }
-
+export default async function CareersPage() {
+  const jobsData = await getJobs();
   const departments = jobsData?.departments || [];
 
   return (
     <main>
-      <Section fullWidth className="w-full min-h-screen flex items-center justify-center !pt-40 !py-20">
-          <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8">
-            {/* Title */}
-            <motion.h1 
-              className="text-4xl font-agile font-medium text-black text-center !mb-12"
-              variants={titleVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ duration: 0.6, ease: "easeOut" }}
-            >
-              Current Openings
-            </motion.h1>
+      <Section fullWidth className="w-full min-h-screen flex items-center justify-center pt-40! py-20!">
+        <div className="max-w-4xl w-full mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Title */}
+          <h1 className="text-4xl font-agile font-medium text-black text-center mb-12! animate-fade-in-down">
+            Current Openings
+          </h1>
 
-            {/* No jobs message */}
-            {departments.length === 0 && (
-              <motion.p 
-                className="text-center text-lg font-onest text-[#5A5A7A]"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-              >
-                No job openings available at the moment. Check back later!
-              </motion.p>
-            )}
+          {/* Error state - shown if fetch failed */}
+          {!jobsData && (
+            <div className="text-center animate-fade-in">
+              <p className="text-lg font-onest text-red-500 mb-4!">
+                Failed to load job openings. Please try again later.
+              </p>
+            </div>
+          )}
 
-            {/* Job Categories */}
-            <motion.div 
-              className="space-y-4"
-              variants={containerVariants}
-              initial="hidden"
-              animate="visible"
-              transition={{ staggerChildren: 0.1, delayChildren: 0.2 }}
-            >
-          {departments.map((department) => {
-            const isExpanded = expandedCategories.has(department.department_name);
-            const jobs = department.jobs;
-
-            return (
-              <motion.div 
-                key={department.department_name} 
-                variants={itemVariants}
-                transition={{ duration: 0.5, ease: "easeOut" }}
-                className="!mb-2 bg-[#D8D8E6] border-[1.79px] border-[#C2C2D6] !p-2 rounded-2xl"
-              >
-              <motion.div
-                className="bg-white rounded-2xl overflow-hidden"
-                initial={false}
-              >
-                {/* Category Header */}
-                <button
-                  onClick={() => toggleCategory(department.department_name)}
-                  className="w-full flex items-center justify-between !px-6 !py-5 text-left hover:bg-gray-50 transition-colors"
-                >
-                  <h2 className="text-xl font-onest font-medium text-black">
-                    {department.department_name}
-                  </h2>
-                  <div className="flex items-center gap-3">
-                    <span className="text-sm font-onest text-[#5A5A7A]">
-                      {jobs.length} {jobs.length === 1 ? "position" : "positions"}
-                    </span>
-                    {isExpanded ? (
-                      <FaChevronUp className="w-4 h-4 text-black" />
-                    ) : (
-                      <FaChevronDown className="w-4 h-4 text-black" />
-                    )}
-                  </div>
-                </button>
-
-                {/* Jobs List */}
-                <AnimatePresence>
-                  {isExpanded && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3 }}
-                      className="overflow-hidden"
-                    >
-                      <div className="!px-6 !pb-4">
-                        {jobs.map((job, index) => (
-                          <motion.div 
-                            key={job.id}
-                            initial={{ opacity: 0, x: -10 }}
-                            animate={{ opacity: 1, x: 0 }}
-                            transition={{ duration: 0.3, delay: index * 0.1 }}
-                          >
-                            {index > 0 && (
-                              <div className="h-[1px] bg-[#E2E4F5] !my-4" />
-                            )}
-                            <div className="flex flex-col sm:flex-row sm:items-center justify-between !py-2 gap-3">
-                              <div className="flex-1">
-                                <h3 className="text-lg font-onest font-medium text-black !mb-1">
-                                  {job.title}
-                                </h3>
-                                <p className="text-sm font-onest text-[#5A5A7A]">
-                                  {job.location} | {job.type} {job.loc_type && `| ${job.loc_type}`}
-                                </p>
-                              </div>
-                              <Link 
-                                href={`/careers/${job.uuid}`}
-                                className="w-full sm:w-auto text-center sm:!ml-6 !px-6 !py-2 bg-[#38385B] text-white rounded-xl font-onest font-medium hover:bg-[#2A2A45] transition-colors"
-                              >
-                                Apply Now
-                              </Link>
-                            </div>
-                          </motion.div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-              </motion.div>
-            );
-          })}
-            </motion.div>
-          </div>
-        </Section>
+          {/* Job Categories - Client Component for interactivity */}
+          {jobsData && <JobAccordion departments={departments} />}
+        </div>
+      </Section>
     </main>
   );
-};
-
-export default Careers;
+}

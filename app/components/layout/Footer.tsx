@@ -4,8 +4,8 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
-    { name: "Terms & Conditions", href: "/terms" },
-    { name: "Privacy Policy", href: "/privacy" },
+    { name: "Terms & Conditions", href: "/terms-and-conditions" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Cookie Policy", href: "/cookies" },
     { name: "Sitemap", href: "/sitemap.xml" },
   ];

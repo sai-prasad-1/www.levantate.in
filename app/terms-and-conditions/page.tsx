@@ -7,14 +7,14 @@ export const metadata: Metadata = {
 
 export default function TermsPage() {
   return (
-    <main className="min-h-screen bg-[#EAEAF1] py-16 px-4">
-      <div className="max-w-4xl mx-auto bg-white rounded-3xl shadow-lg border border-[#E2E4F5] p-8 md:p-10">
+    <main className="min-h-screen bg-[#EAEAF1] mt-48 pb-16 px-4 w-screen flex items-center justify-center ">
+      <div className="w-2/3 mx-auto bg-white rounded-3xl shadow-lg border border-[#E2E4F5] p-7">
         <h1 className="text-3xl md:text-4xl font-semibold mb-6">Terms &amp; Conditions</h1>
         <p className="text-sm text-gray-500 mb-10">
           Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
         </p>
 
-        <div className="space-y-8 text-sm md:text-base leading-relaxed text-gray-700">
+        <div className="space-y-8 text-sm md:text-base leading-relaxed text-gray-700 mx-7">
           <section>
             <h2 className="text-xl font-semibold mb-2">1. Agreement to Terms</h2>
             <p>

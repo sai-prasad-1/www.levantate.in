@@ -4,6 +4,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import Section from '../ui/Section';
+import CTAButton from '../ui/CTAButton';
 
 type Props = {}
 
@@ -143,39 +144,7 @@ const Hero = (props: Props) => {
           transition={{ duration: 0.6, ease: "easeOut" }}
         >
           {/* CTA Button */}
-          <motion.div
-            whileHover="hover"
-            whileTap={{ scale: 0.98 }}
-            variants={{
-              hover: { scale: 1.05 }
-            }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            <Link 
-              href="#contact"
-              className="h-12 sm:h-14 w-fit !px-2 !pr-3 sm:!pr-4 flex items-center gap-2 bg-black text-white rounded-xl sm:rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5]"
-            >
-              <motion.div 
-                className="w-8 h-8 sm:w-10 sm:h-10 bg-[#C4F7D4] rounded-md sm:rounded-lg border border-white p-1 sm:p-1.5 flex items-center justify-center"
-                variants={{
-                  hover: { rotate: 360 }
-                }}
-                transition={{ duration: 0.6 }}
-              >
-                <Image 
-                  src="/levantate_logo_square.svg" 
-                  alt="" 
-                  width={20} 
-                  height={20}
-                  className="w-4 h-4 sm:w-5 sm:h-5"
-                />
-              </motion.div>
-              <div className="flex flex-col text-left leading-tight">
-                <span className="text-xs sm:text-sm font-medium font-onest">Book an intro call</span>
-                <span className="text-[10px] sm:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
-      </div>
-            </Link>
-          </motion.div>
+          <CTAButton size="md" />
           <motion.div
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.98 }}

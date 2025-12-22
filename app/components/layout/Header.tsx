@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
+import CTAButton from "../ui/CTAButton";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -140,39 +141,9 @@ export default function Header() {
           </div>
 
           {/* CTA Button - Desktop */}
-          <motion.div
-            whileHover="hover"
-            whileTap={{ scale: 0.98 }}
-            variants={{
-              hover: { scale: 1.05 }
-            }}
-            transition={{ type: "spring", stiffness: 400, damping: 17 }}
-          >
-            <Link 
-              href="#contact"
-              className="hidden h-14 w-fit !px-2 !mr-2 lg:flex items-center gap-2 bg-black text-white rounded-2xl hover:bg-gray-900 transition-all shrink-0 border-2 border-[#E2E4F5] cursor-pointer"
-            >
-              <motion.div 
-                className="w-8 h-8 sm:w-10 sm:h-10 bg-[#C4F7D4] rounded-md sm:rounded-lg border border-white p-1 sm:p-1.5 flex items-center justify-center"
-                variants={{
-                  hover: { rotate: 360 }
-                }}
-                transition={{ duration: 0.6 }}
-              >
-                <Image 
-                  src="/levantate_logo_square.svg" 
-                  alt="" 
-                  width={20} 
-                  height={20}
-                  className="w-4 h-4 sm:w-5 sm:h-5"
-                />
-              </motion.div>
-              <div className="flex flex-col text-left leading-tight">
-                <span className="text-xs sm:text-sm font-medium font-onest">Book an intro call</span>
-                <span className="text-[10px] sm:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
-              </div>
-            </Link>
-          </motion.div>
+          <div className="hidden lg:block !mr-2">
+            <CTAButton size="lg" />
+          </div>
 
           {/* Mobile Menu Button */}
           <button 
@@ -310,27 +281,7 @@ export default function Header() {
 
                 {/* CTA Button */}
                 <div className="!p-4 border-t border-gray-200">
-                  <button 
-                    onClick={() => {
-                      setIsMobileMenuOpen(false);
-                      setTimeout(() => scrollToSection("contact", "contact"), 300);
-                    }}
-                    className="flex items-center gap-3 w-full bg-black text-white !p-3 rounded-2xl hover:bg-gray-900 transition-all cursor-pointer"
-                  >
-                    <div className="w-10 h-10 bg-[#C4F7D4] rounded-lg border border-white p-1.5 flex items-center justify-center shrink-0">
-                      <Image 
-                        src="/levantate_logo_square.svg" 
-                        alt="" 
-                        width={20} 
-                        height={20}
-                        className="w-5 h-5"
-                      />
-                    </div>
-                    <div className="flex flex-col text-left leading-tight">
-                      <span className="text-sm font-medium">Book an intro call</span>
-                      <span className="text-xs text-gray-300">Friendly chat, no pressure</span>
-                    </div>
-                  </button>
+                  <CTAButton size="md" onClick={() => setIsMobileMenuOpen(false)} />
                 </div>
               </div>
             </motion.div>

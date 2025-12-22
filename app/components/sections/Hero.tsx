@@ -173,7 +173,7 @@ const Hero = (props: Props) => {
               <div className="flex flex-col text-left leading-tight">
                 <span className="text-xs sm:text-sm font-medium font-onest">Book an intro call</span>
                 <span className="text-[10px] sm:text-xs text-gray-300 font-onest">Friendly chat, no pressure</span>
-              </div>
+      </div>
             </Link>
           </motion.div>
           <motion.div

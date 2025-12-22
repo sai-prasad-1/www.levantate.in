@@ -18,8 +18,8 @@ export default function TermsPage() {
               Terms &amp; Conditions
             </h1>
             <p className="text-sm sm:text-base font-onest text-[#5A5A7A]">
-              Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-            </p>
+          Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+        </p>
           </div>
 
           {/* Main Card */}
@@ -29,8 +29,8 @@ export default function TermsPage() {
                 {/* Intro */}
                 <section className="animate-fade-in [animation-delay:100ms] mb-4!">
                   <p className="text-sm sm:text-base md:text-lg font-onest text-[#5A5A7A] leading-relaxed">
-                    By accessing or using the Levantate Labs website, products, or services (collectively, the &quot;Services&quot;),
-                    you agree to be bound by these Terms &amp; Conditions. If you do not agree, you may not access or use our
+              By accessing or using the Levantate Labs website, products, or services (collectively, the &quot;Services&quot;),
+              you agree to be bound by these Terms &amp; Conditions. If you do not agree, you may not access or use our
                     Services. Please also review our{" "}
                     <Link href="/privacy-policy" className="text-[#38385B] font-medium underline underline-offset-2 hover:text-[#2A2A45] transition-colors">
                       Privacy Policy
@@ -39,8 +39,8 @@ export default function TermsPage() {
                     <Link href="/cookies" className="text-[#38385B] font-medium underline underline-offset-2 hover:text-[#2A2A45] transition-colors">
                       Cookie Policy
                     </Link>.
-                  </p>
-                </section>
+            </p>
+          </section>
 
                 {/* Section 1 */}
                 <section className="animate-fade-in [animation-delay:150ms] mb-4!">
@@ -53,11 +53,11 @@ export default function TermsPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    Levantate Labs provides consulting, design, and development services including (but not limited to)
-                    blockchain development, AI solutions, web development, and UI/UX design. The scope of work for any
-                    engagement is defined in a separate proposal, statement of work, or master services agreement.
-                  </p>
-                </section>
+              Levantate Labs provides consulting, design, and development services including (but not limited to)
+              blockchain development, AI solutions, web development, and UI/UX design. The scope of work for any
+              engagement is defined in a separate proposal, statement of work, or master services agreement.
+            </p>
+          </section>
 
                 {/* Section 2 */}
                 <section className="animate-fade-in [animation-delay:200ms] mb-4!">
@@ -70,11 +70,11 @@ export default function TermsPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    Unless otherwise agreed in writing, Levantate Labs retains all intellectual property rights to tools,
-                    libraries, and frameworks used to deliver the Services. Project-specific deliverables may be assigned or
-                    licensed to you as specified in the applicable agreement.
-                  </p>
-                </section>
+              Unless otherwise agreed in writing, Levantate Labs retains all intellectual property rights to tools,
+              libraries, and frameworks used to deliver the Services. Project-specific deliverables may be assigned or
+              licensed to you as specified in the applicable agreement.
+            </p>
+          </section>
 
                 {/* Section 3 */}
                 <section className="animate-fade-in [animation-delay:250ms] mb-4!">
@@ -87,11 +87,11 @@ export default function TermsPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    Both parties agree to keep confidential any non‑public information shared in the course of an engagement,
-                    and to use such information only for purposes of performing their obligations under the relevant
-                    agreement.
-                  </p>
-                </section>
+              Both parties agree to keep confidential any non‑public information shared in the course of an engagement,
+              and to use such information only for purposes of performing their obligations under the relevant
+              agreement.
+            </p>
+          </section>
 
                 {/* Section 4 */}
                 <section className="animate-fade-in [animation-delay:300ms] mb-4!">
@@ -104,12 +104,12 @@ export default function TermsPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    To the maximum extent permitted by law, Levantate Labs will not be liable for any indirect, incidental,
-                    special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly
-                    or indirectly, arising from your use of the Services. Our total liability for any claim will not exceed
-                    the amounts paid by you for the Services giving rise to the claim.
-                  </p>
-                </section>
+              To the maximum extent permitted by law, Levantate Labs will not be liable for any indirect, incidental,
+              special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly
+              or indirectly, arising from your use of the Services. Our total liability for any claim will not exceed
+              the amounts paid by you for the Services giving rise to the claim.
+            </p>
+          </section>
 
                 {/* Section 5 */}
                 <section className="animate-fade-in [animation-delay:350ms] mb-4!">
@@ -122,11 +122,11 @@ export default function TermsPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    Our Services may integrate with or rely on third‑party platforms, APIs, or infrastructure. We are not
-                    responsible for the availability, security, or performance of any third‑party services, or for changes
-                    made by such third parties that may impact your project.
-                  </p>
-                </section>
+              Our Services may integrate with or rely on third‑party platforms, APIs, or infrastructure. We are not
+              responsible for the availability, security, or performance of any third‑party services, or for changes
+              made by such third parties that may impact your project.
+            </p>
+          </section>
 
                 {/* Section 6 */}
                 <section className="animate-fade-in [animation-delay:400ms] mb-4!">
@@ -139,11 +139,11 @@ export default function TermsPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    These Terms &amp; Conditions are governed by and construed in accordance with the laws applicable in your
-                    primary engagement jurisdiction, without regard to its conflict of law provisions, unless otherwise
-                    specified in a signed agreement.
-                  </p>
-                </section>
+              These Terms &amp; Conditions are governed by and construed in accordance with the laws applicable in your
+              primary engagement jurisdiction, without regard to its conflict of law provisions, unless otherwise
+              specified in a signed agreement.
+            </p>
+          </section>
 
                 {/* Section 7 */}
                 <section className="animate-fade-in [animation-delay:450ms] mb-4!">
@@ -156,11 +156,11 @@ export default function TermsPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    We may update these Terms &amp; Conditions from time to time. When we do, we will revise the &quot;Last
-                    updated&quot; date at the top of this page. Your continued use of the Services after any changes become
-                    effective constitutes your acceptance of the updated terms.
-                  </p>
-                </section>
+              We may update these Terms &amp; Conditions from time to time. When we do, we will revise the &quot;Last
+              updated&quot; date at the top of this page. Your continued use of the Services after any changes become
+              effective constitutes your acceptance of the updated terms.
+            </p>
+          </section>
 
                 {/* Section 8 - Contact */}
                 <section className="animate-fade-in [animation-delay:500ms]">
@@ -173,17 +173,17 @@ export default function TermsPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    If you have any questions about these Terms &amp; Conditions, please contact us at{" "}
+              If you have any questions about these Terms &amp; Conditions, please contact us at{" "}
                     <a 
                       href="mailto:contact@levantate.in" 
                       className="text-[#38385B] font-medium underline underline-offset-2 hover:text-[#2A2A45] transition-colors"
                     >
-                      contact@levantate.in
+                contact@levantate.in
                     </a>.
-                  </p>
-                </section>
-              </div>
-            </div>
+            </p>
+          </section>
+        </div>
+      </div>
           </div>
         </div>
       </Section>

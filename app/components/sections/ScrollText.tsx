@@ -85,7 +85,7 @@ const ScrollText = () => {
     </span>
   ));
 
-  return (
+    return (
     <div className="relative w-full overflow-hidden py-8 sm:py-12 md:py-20 lg:py-[84px] min-h-[120px] sm:min-h-[180px] md:min-h-[260px] lg:min-h-[300px]">
       {/* Top Groove Borders - 3 grooves */}
       {/* Groove 1 - Smallest */}
@@ -205,7 +205,7 @@ const ScrollText = () => {
           </span>
         </ParallaxText>
       </div>
-    </div>
+        </div>
   );
 };
 

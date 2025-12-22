@@ -7,9 +7,9 @@ import OurWork from "./components/sections/OurWork";
 
 export default function Home() {
   return (
-    <main>
-      <Hero />
-      <ScrollText />
+      <main>
+        <Hero />
+        <ScrollText />
       <section id="why">
         <WhyUs />
       </section>
@@ -17,13 +17,13 @@ export default function Home() {
       <section id="what">
         <WhatDo />
       </section>
-      <SectionDivider />
+        <SectionDivider />
       <section id="work">
         <OurWork />
       </section>
       <section id="contact">
         {/* Contact section - add your contact form/info here */}
       </section>
-    </main>
+      </main>
   );
 }

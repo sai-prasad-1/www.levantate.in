@@ -18,8 +18,8 @@ export default function PrivacyPolicyPage() {
               Privacy Policy
             </h1>
             <p className="text-sm sm:text-base font-onest text-[#5A5A7A]">
-              Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
-            </p>
+          Last updated: {new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" })}
+        </p>
           </div>
 
           {/* Main Card */}
@@ -29,14 +29,14 @@ export default function PrivacyPolicyPage() {
                 {/* Intro */}
                 <section className="animate-fade-in [animation-delay:100ms] mb-4!">
                   <p className="text-sm sm:text-base md:text-lg font-onest text-[#5A5A7A] leading-relaxed">
-                    Levantate Labs (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting your privacy.
-                    This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit
+              Levantate Labs (&quot;we&quot;, &quot;us&quot;, or &quot;our&quot;) is committed to protecting your privacy.
+              This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit
                     our website or engage with our services. It should be read together with our{" "}
                     <Link href="/cookies" className="text-[#38385B] font-medium underline underline-offset-2 hover:text-[#2A2A45] transition-colors">
                       Cookie Policy
                     </Link>.
-                  </p>
-                </section>
+            </p>
+          </section>
 
                 {/* Section 1 */}
                 <section className="animate-fade-in [animation-delay:150ms] mb-4!">
@@ -81,7 +81,7 @@ export default function PrivacyPolicyPage() {
                       </div>
                     </div>
                   </div>
-                </section>
+          </section>
 
                 {/* Section 2 */}
                 <section className="animate-fade-in [animation-delay:200ms] mb-4!">
@@ -118,7 +118,7 @@ export default function PrivacyPolicyPage() {
                       <span className="font-onest text-[#5A5A7A]">Comply with legal obligations and protect our rights and interests.</span>
                     </div>
                   </div>
-                </section>
+          </section>
 
                 {/* Section 3 */}
                 <section className="animate-fade-in [animation-delay:250ms] mb-4!">
@@ -131,8 +131,8 @@ export default function PrivacyPolicyPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13! mb-4!">
-                    We do not sell your personal data. We may share your information with:
-                  </p>
+              We do not sell your personal data. We may share your information with:
+            </p>
                   <div className="pl-11! sm:pl-13! space-y-3!">
                     <div className="flex items-start gap-3 bg-[#F8F8FB] rounded-xl p-4! border border-[#E2E4F5]">
                       <div className="w-2 h-2 rounded-full bg-[#38385B] mt-2! shrink-0" />
@@ -156,7 +156,7 @@ export default function PrivacyPolicyPage() {
                       </div>
                     </div>
                   </div>
-                </section>
+          </section>
 
                 {/* Section 4 */}
                 <section className="animate-fade-in [animation-delay:300ms] mb-4!">
@@ -169,11 +169,11 @@ export default function PrivacyPolicyPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    We retain personal data only for as long as necessary to fulfill the purposes outlined in this Policy,
-                    unless a longer retention period is required or permitted by law (for example, for tax, accounting, or
-                    legal reasons).
-                  </p>
-                </section>
+              We retain personal data only for as long as necessary to fulfill the purposes outlined in this Policy,
+              unless a longer retention period is required or permitted by law (for example, for tax, accounting, or
+              legal reasons).
+            </p>
+          </section>
 
                 {/* Section 5 */}
                 <section className="animate-fade-in [animation-delay:350ms] mb-4!">
@@ -186,8 +186,8 @@ export default function PrivacyPolicyPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13! mb-4!">
-                    Depending on your jurisdiction, you may have certain rights regarding your personal data, such as:
-                  </p>
+              Depending on your jurisdiction, you may have certain rights regarding your personal data, such as:
+            </p>
                   <div className="pl-11! sm:pl-13! space-y-3! mb-4!">
                     <div className="flex items-start gap-3 bg-[#F8F8FB] rounded-xl p-4! border border-[#E2E4F5]">
                       <div className="w-2 h-2 rounded-full bg-[#38385B] mt-2! shrink-0" />
@@ -207,12 +207,12 @@ export default function PrivacyPolicyPage() {
                     </div>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    To exercise these rights, please contact us at{" "}
+              To exercise these rights, please contact us at{" "}
                     <a href="mailto:contact@levantate.in" className="text-[#38385B] font-medium underline underline-offset-2 hover:text-[#2A2A45] transition-colors">
-                      contact@levantate.in
+                contact@levantate.in
                     </a>. We may need to verify your identity before processing your request.
-                  </p>
-                </section>
+            </p>
+          </section>
 
                 {/* Section 6 */}
                 <section className="animate-fade-in [animation-delay:400ms] mb-4!">
@@ -225,10 +225,10 @@ export default function PrivacyPolicyPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    If we transfer your personal data across borders, we will take appropriate measures to ensure an adequate
-                    level of protection in accordance with applicable data protection laws.
-                  </p>
-                </section>
+              If we transfer your personal data across borders, we will take appropriate measures to ensure an adequate
+              level of protection in accordance with applicable data protection laws.
+            </p>
+          </section>
 
                 {/* Section 7 */}
                 <section className="animate-fade-in [animation-delay:450ms] mb-4!">
@@ -241,11 +241,11 @@ export default function PrivacyPolicyPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    We implement reasonable technical and organizational measures to protect your personal data from
-                    unauthorized access, loss, misuse, or alteration. However, no method of transmission over the internet or
-                    electronic storage is completely secure, and we cannot guarantee absolute security.
-                  </p>
-                </section>
+              We implement reasonable technical and organizational measures to protect your personal data from
+              unauthorized access, loss, misuse, or alteration. However, no method of transmission over the internet or
+              electronic storage is completely secure, and we cannot guarantee absolute security.
+            </p>
+          </section>
 
                 {/* Section 8 */}
                 <section className="animate-fade-in [animation-delay:500ms] mb-4!">
@@ -258,11 +258,11 @@ export default function PrivacyPolicyPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    We may update this Privacy Policy from time to time. When we do, we will update the &quot;Last updated&quot;
-                    date above. Your continued use of our website or services after changes become effective constitutes your
-                    acceptance of the updated Policy.
-                  </p>
-                </section>
+              We may update this Privacy Policy from time to time. When we do, we will update the &quot;Last updated&quot;
+              date above. Your continued use of our website or services after changes become effective constitutes your
+              acceptance of the updated Policy.
+            </p>
+          </section>
 
                 {/* Section 9 - Contact */}
                 <section className="animate-fade-in [animation-delay:550ms]">
@@ -275,17 +275,17 @@ export default function PrivacyPolicyPage() {
                     </h2>
                   </div>
                   <p className="text-sm sm:text-base font-onest text-[#5A5A7A] leading-relaxed pl-11! sm:pl-13!">
-                    If you have any questions about this Privacy Policy or how we handle your data, please contact us at{" "}
+              If you have any questions about this Privacy Policy or how we handle your data, please contact us at{" "}
                     <a 
                       href="mailto:contact@levantate.in" 
                       className="text-[#38385B] font-medium underline underline-offset-2 hover:text-[#2A2A45] transition-colors"
                     >
-                      contact@levantate.in
+                contact@levantate.in
                     </a>.
-                  </p>
-                </section>
-              </div>
-            </div>
+            </p>
+          </section>
+        </div>
+      </div>
           </div>
         </div>
       </Section>

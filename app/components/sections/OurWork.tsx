@@ -182,9 +182,9 @@ const OurWork = () => {
                         }}
                         transition={{ duration: 0.6 }}
                       >
-                        <Image 
+            <Image 
                           src="/levantate_logo_square.svg" 
-                          alt="" 
+              alt="" 
                           width={20} 
                           height={20}
                           className="w-4 h-4 sm:w-4 sm:h-4 md:w-5 md:h-5"
